@@ -64,13 +64,21 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="942881243613832" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Desktop\tiles dos personagens (the deliverer).png" />
+                </animation>
+                <animation framecount="2" loop="1" name="Right" pingpong="1" repeatcount="1" repeatto="0" sid="712391877623718" speed="6">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Desktop\tiles dos personagens (the deliverer).png" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
-                <animation framecount="5" loop="0" name="Jump" pingpong="1" repeatcount="1" repeatto="0" sid="712391877623718" speed="20">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.6" />
+                <animation framecount="2" loop="0" name="Left" pingpong="0" repeatcount="1" repeatto="0" sid="756517927072154" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Desktop\tiles dos personagens (the deliverer).png" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Up" pingpong="0" repeatcount="1" repeatto="0" sid="588148206322086" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Desktop\tiles dos personagens (the deliverer).png" />
+                </animation>
+                <animation framecount="2" loop="0" name="Down" pingpong="0" repeatcount="1" repeatto="0" sid="933926599459419" speed="4">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Desktop\tiles dos personagens (the deliverer).png" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
