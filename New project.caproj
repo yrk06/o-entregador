@@ -19,6 +19,7 @@
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -51,10 +52,14 @@
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="isJumping" sid="427704123626783" type="boolean" />
+                <instance-variable name="shouldShake" sid="716414719038641" type="boolean" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction" sid="770233363734195">
                     <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="ScrollTo" sid="620156941465783">
+                    <behavior id="scrollto" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -79,11 +84,12 @@
         <object-type name="Escapamento" sid="721445509494310">
             <plugin id="Sprite" />
             <instance-variables>
-                <instance-variable name="Dano" sid="826119537755193" type="number" />
+                <instance-variable name="DanoMax" sid="826119537755193" type="number" />
                 <instance-variable name="isAtacking" sid="124029481605153" type="boolean" />
                 <instance-variable name="AttackTime" sid="396752603021234" type="number" />
                 <instance-variable name="CoolDown" sid="403523231294706" type="number" />
                 <instance-variable name="IsInCooldown" sid="925285459014885" type="boolean" />
+                <instance-variable name="Strength" sid="719102381488623" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Pin" sid="813366248761571">
@@ -95,7 +101,7 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="569878774229801" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.0625" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
