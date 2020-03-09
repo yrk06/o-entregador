@@ -74,10 +74,14 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block sid="630482009562143">
+        <event-block any="1" sid="630482009562143">
             <conditions>
                 <condition id="0" name="On key pressed" sid="913256052429597" type="Keyboard">
                     <param id="0" name="Key">67</param>
+                </condition>
+                <condition id="0" name="On click" sid="803237934579152" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
                 </condition>
             </conditions>
             <actions>
@@ -87,7 +91,26 @@
                     <param id="2" name="X">Player.X</param>
                     <param id="3" name="Y">Player.Y</param>
                 </action>
+                <action id="-8" name="Set angle" sid="582272879424929" type="mentos">
+                    <param id="0" name="Angle">angle(Player.X,Player.Y,Mouse.X,Mouse.Y)</param>
+                </action>
             </actions>
+            <sub-events>
+                <event-block sid="496234379040970">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="461538819948243" type="Player">
+                            <param id="0" name="Instance variable">shouldShake</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="ScrollTo" id="0" name="Shake" sid="362427069809756" type="Player">
+                            <param id="0" name="Magnitude">10</param>
+                            <param id="1" name="Duration">1</param>
+                            <param id="2" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="212597568483562">
             <conditions>
@@ -107,14 +130,14 @@
                 <action behavior="Timer" id="0" name="Start timer" sid="649082135403124" type="Escapamento">
                     <param id="0" name="Duration">Escapamento.CoolDown</param>
                     <param id="1" name="Type">0</param>
-                    <param id="2" name="Tag">&quot;Cooldown&quot;</param>
+                    <param id="2" name="Tag">&quot;CooldownM&quot;</param>
                 </action>
             </actions>
         </event-block>
         <event-block sid="931418628270353">
             <conditions>
                 <condition behavior="Timer" id="0" name="On timer" sid="131128674298635" type="Escapamento">
-                    <param id="0" name="Tag">&quot;Cooldown&quot;</param>
+                    <param id="0" name="Tag">&quot;CooldownM&quot;</param>
                 </condition>
             </conditions>
             <actions>
@@ -182,6 +205,53 @@
                     <param id="1" name="Mode">0</param>
                 </action>
             </actions>
+        </event-block>
+        <event-block sid="418910853128056">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="397753988782373" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <variable constant="0" name="AngleTo" sid="629281029026882" static="0" type="number">0</variable>
+                <event-block sid="275631199237106">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="232198557090816" type="System">
+                            <param id="0" name="First value">angle(Player.X,Player.Y,Mouse.X,Mouse.Y)</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="893981875507810" type="System">
+                            <param id="0" name="Variable">AngleTo</param>
+                            <param id="1" name="Value">angle(Player.X,Player.Y,Mouse.X,Mouse.Y) + 360</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="336589881820758">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="732861718021332" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="789350608204983" type="System">
+                            <param id="0" name="Variable">AngleTo</param>
+                            <param id="1" name="Value">angle(Player.X,Player.Y,Mouse.X,Mouse.Y)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="126087248943834">
+                    <conditions />
+                    <actions>
+                        <action id="-10" name="Set value" sid="871061497833475" type="Escapamento">
+                            <param id="0" name="Instance variable">Strength</param>
+                            <param id="1" name="Value">abs(AngleTo - Escapamento.Angle)</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="184543219550753" type="Escapamento">
+                            <param id="0" name="Angle">angle(Player.X,Player.Y,Mouse.X,Mouse.Y)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>
