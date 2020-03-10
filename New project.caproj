@@ -19,6 +19,7 @@
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
     </used-behaviors>
     <used-effects />
@@ -126,14 +127,144 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="MJ" sid="714757679225220">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Speed" sid="717772548602425" type="number" />
+                <instance-variable name="VectorX" sid="550524404483138" type="number" />
+                <instance-variable name="VectorY" sid="906102950907218" type="number" />
+                <instance-variable name="point" sid="997274995502738" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="8Direction" sid="375759401969030">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="983538003997552" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Desktop\tiles dos personagens (the deliverer).png" />
+                </animation>
+                <animation framecount="2" loop="1" name="Right" pingpong="1" repeatcount="1" repeatto="0" sid="463361199870906" speed="6">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Desktop\tiles dos personagens (the deliverer).png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="0" name="Left" pingpong="0" repeatcount="1" repeatto="0" sid="454617345899172" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Desktop\tiles dos personagens (the deliverer).png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Up" pingpong="0" repeatcount="1" repeatto="0" sid="405828285509667" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Desktop\tiles dos personagens (the deliverer).png" />
+                </animation>
+                <animation framecount="2" loop="0" name="Down" pingpong="0" repeatcount="1" repeatto="0" sid="193428511666679" speed="4">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Desktop\tiles dos personagens (the deliverer).png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MJCheckpoint" sid="383495180593762">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="NextPoint" sid="584205380367165" type="number" />
+                <instance-variable name="Point" sid="615321402307399" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="835956009387218" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Teclas" sid="511797642968276">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Type" sid="986840264532975" type="string" />
+                <instance-variable name="Active" sid="360296248307679" type="boolean" />
+                <instance-variable name="Speed" sid="850597807069635" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="654679391572520">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="W" pingpong="0" repeatcount="1" repeatto="0" sid="838473629020867" speed="5">
+                    <frame duration="1" hotspotX="1" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Documents\W-Key.png">
+                        <collision-poly>
+                            <point x="0.0535714" y="0.03125" />
+                            <point x="1" y="0.0260417" />
+                            <point x="1" y="0.989583" />
+                            <point x="0.0178571" y="0.989583" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="A" pingpong="0" repeatcount="1" repeatto="0" sid="878727009950220" speed="5">
+                    <frame duration="1" hotspotX="1" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Documents\A-Key.png">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="1" y="0.625" />
+                            <point x="1" y="0.1875" />
+                            <point x="1" y="0.5" />
+                            <point x="1" y="0.9375" />
+                            <point x="1" y="0.875" />
+                            <point x="0.0625" y="0.9375" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="S" pingpong="0" repeatcount="1" repeatto="0" sid="429673043980222" speed="5">
+                    <frame duration="1" hotspotX="1" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Documents\S-Key.png">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="1" y="0.625" />
+                            <point x="1" y="0.1875" />
+                            <point x="1" y="0.5" />
+                            <point x="1" y="0.9375" />
+                            <point x="1" y="0.875" />
+                            <point x="0.0625" y="0.9375" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="D" pingpong="0" repeatcount="1" repeatto="0" sid="580497673327892" speed="5">
+                    <frame duration="1" hotspotX="1" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Documents\D-Key.png">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="1" y="0.625" />
+                            <point x="1" y="0.1875" />
+                            <point x="1" y="0.5" />
+                            <point x="1" y="0.9375" />
+                            <point x="1" y="0.875" />
+                            <point x="0.0625" y="0.9375" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="KeyShow" sid="609524760982146">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="691267002444798" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.0520833" y="0.0885417" />
+                            <point x="0.947917" y="0.078125" />
+                            <point x="0.947917" y="0.9375" />
+                            <point x="0.0520833" y="0.942708" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Layout 1.xml</layout>
+        <layout>MJ.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
         <event-sheet>Player.xml</event-sheet>
+        <event-sheet>MJ.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="1" />

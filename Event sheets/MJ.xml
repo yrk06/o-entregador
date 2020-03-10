@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MJ</name>
+    <events>
+        <event-block sid="481428675167192">
+            <conditions>
+                <condition id="-33" name="Pick by comparison" sid="213854253217959" type="System">
+                    <param id="0" name="Object">MJCheckpoint</param>
+                    <param id="1" name="Expression">MJCheckpoint.Point</param>
+                    <param id="2" name="Comparison">0</param>
+                    <param id="3" name="Value">MJ.point</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="161616842796089" type="MJ">
+                    <param id="0" name="Instance variable">VectorX</param>
+                    <param id="1" name="Value">(MJCheckpoint.X - MJ.X)/abs(MJCheckpoint.X - MJ.X)</param>
+                </action>
+                <action id="-10" name="Set value" sid="426193622239427" type="MJ">
+                    <param id="0" name="Instance variable">VectorY</param>
+                    <param id="1" name="Value">(MJCheckpoint.Y - MJ.Y)/abs(MJCheckpoint.Y - MJ.Y)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="148164502521445">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="204511218354555" type="MJ">
+                            <param id="0" name="Instance variable">VectorX</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="250930534336096" type="MJ">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="614525656623277" type="MJ">
+                            <param id="0" name="Animation">&quot;Left&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="954309747175031">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="204141385523754" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="590342766879149" type="MJ">
+                            <param id="0" name="Instance variable">VectorX</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="598938305944386" type="MJ">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="806020791127531" type="MJ">
+                            <param id="0" name="Animation">&quot;Right&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="604137847998530">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="764930032036840" type="MJ">
+                            <param id="0" name="Instance variable">VectorY</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="173830592917706" type="MJ">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="204443745768413">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="314565097617823" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="448468382716305" type="MJ">
+                            <param id="0" name="Instance variable">VectorY</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="563890602498485" type="MJ">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="326871510798386">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="188426421085603" type="MJ">
+                    <param id="0" name="Object">MJCheckpoint</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="754629400108447" type="MJCheckpoint">
+                    <param id="0" name="Instance variable">Point</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">MJ.point</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="776591561150519" type="MJ">
+                    <param id="0" name="Instance variable">point</param>
+                    <param id="1" name="Value">MJCheckpoint.NextPoint</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="463472749016954">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="740684930193278" type="System">
+                    <param id="0" name="Interval (seconds)">random(1)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="853494614583010" type="System">
+                    <param id="0" name="Object to create">Teclas</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">854</param>
+                    <param id="3" name="Y">37</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="676167686756747" type="Teclas">
+                    <param id="0" name="Instance variable">Active</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <variable constant="0" name="Tipo" sid="687703930491725" static="0" type="number">0</variable>
+                <event-block sid="620861733927398">
+                    <conditions />
+                    <actions>
+                        <action id="-9" name="Set value" sid="313227603525090" type="System">
+                            <param id="0" name="Variable">Tipo</param>
+                            <param id="1" name="Value">round(random(3))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="233879131210400">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="705477102510932" type="System">
+                            <param id="0" name="Variable">Tipo</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="440582010295754" type="Teclas">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Value">&quot;W&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="127698581228168" type="Teclas">
+                            <param id="0" name="Animation">&quot;W&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="892578497520295">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="433970754093892" type="System">
+                            <param id="0" name="Variable">Tipo</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="810003362038961" type="Teclas">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Value">&quot;A&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="727296199494736" type="Teclas">
+                            <param id="0" name="Animation">&quot;A&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="749483234973478">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="237597388479969" type="System">
+                            <param id="0" name="Variable">Tipo</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="177312822648990" type="Teclas">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Value">&quot;S&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="119119633569603" type="Teclas">
+                            <param id="0" name="Animation">&quot;S&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="742670821747805">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="909248663115530" type="System">
+                            <param id="0" name="Variable">Tipo</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="522076465621432" type="Teclas">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Value">&quot;D&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="529909043221992" type="Teclas">
+                            <param id="0" name="Animation">&quot;D&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="811804775831038">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="517614622606103" type="Teclas">
+                    <param id="0" name="Instance variable">Active</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="943096993330284" type="Teclas">
+                    <param id="0" name="X">Teclas.X - abs(Teclas.Speed)*dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="434590869589870">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="371774629407184" type="Teclas">
+                    <param id="0" name="Object">KeyShow</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="363608423051038">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="696172085377687" type="Keyboard">
+                            <param id="0" name="Key">87</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="860373030722192">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="717508606461186" type="Teclas">
+                                    <param id="0" name="Instance variable">Type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;W&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="684140124017409" type="Teclas" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="409164344141023">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="180432201281615" type="Keyboard">
+                            <param id="0" name="Key">65</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="944734750904173">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="808699721233359" type="Teclas">
+                                    <param id="0" name="Instance variable">Type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;A&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="883994860950809" type="Teclas" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="565575626807794">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="896298561091064" type="Keyboard">
+                            <param id="0" name="Key">83</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="157614107809622">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="911252453245964" type="Teclas">
+                                    <param id="0" name="Instance variable">Type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;S&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="335428698985527" type="Teclas" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="305161282318973">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="436966962121029" type="Keyboard">
+                            <param id="0" name="Key">68</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="476028500086501">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="324595495198904" type="Teclas">
+                                    <param id="0" name="Instance variable">Type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;D&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="833575961654847" type="Teclas" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
