@@ -15,6 +15,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <event-sheet order="1">Event sheet 1</event-sheet>
         <event-sheet order="2">Player</event-sheet>
         <event-sheet order="4">MJ</event-sheet>
+        <event-sheet order="5">Music</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />

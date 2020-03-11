@@ -10,6 +10,8 @@
     <unique-id>29z4xr7btid93</unique-id>
     <saved-with-version>27500</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
@@ -179,6 +181,7 @@
                 <instance-variable name="Type" sid="986840264532975" type="string" />
                 <instance-variable name="Active" sid="360296248307679" type="boolean" />
                 <instance-variable name="Speed" sid="850597807069635" type="number" />
+                <instance-variable name="ShouldBePressed" sid="109270650207452" type="boolean" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="DestroyOutsideLayout" sid="654679391572520">
@@ -187,17 +190,10 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="W" pingpong="0" repeatcount="1" repeatto="0" sid="838473629020867" speed="5">
-                    <frame duration="1" hotspotX="1" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Documents\W-Key.png">
-                        <collision-poly>
-                            <point x="0.0535714" y="0.03125" />
-                            <point x="1" y="0.0260417" />
-                            <point x="1" y="0.989583" />
-                            <point x="0.0178571" y="0.989583" />
-                        </collision-poly>
-                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Documents\W-Key.png" />
                 </animation>
                 <animation framecount="1" loop="0" name="A" pingpong="0" repeatcount="1" repeatto="0" sid="878727009950220" speed="5">
-                    <frame duration="1" hotspotX="1" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Documents\A-Key.png">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Documents\A-Key.png">
                         <collision-poly>
                             <point x="0.1875" y="0.1875" />
                             <point x="1" y="0.625" />
@@ -211,7 +207,7 @@
                     </frame>
                 </animation>
                 <animation framecount="1" loop="0" name="S" pingpong="0" repeatcount="1" repeatto="0" sid="429673043980222" speed="5">
-                    <frame duration="1" hotspotX="1" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Documents\S-Key.png">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Documents\S-Key.png">
                         <collision-poly>
                             <point x="0.1875" y="0.1875" />
                             <point x="1" y="0.625" />
@@ -225,7 +221,7 @@
                     </frame>
                 </animation>
                 <animation framecount="1" loop="0" name="D" pingpong="0" repeatcount="1" repeatto="0" sid="580497673327892" speed="5">
-                    <frame duration="1" hotspotX="1" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Documents\D-Key.png">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Documents\D-Key.png">
                         <collision-poly>
                             <point x="0.1875" y="0.1875" />
                             <point x="1" y="0.625" />
@@ -246,14 +242,20 @@
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="691267002444798" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
-                            <point x="0.0520833" y="0.0885417" />
-                            <point x="0.947917" y="0.078125" />
-                            <point x="0.947917" y="0.9375" />
-                            <point x="0.0520833" y="0.942708" />
+                            <point x="0.0625" y="0.0833333" />
+                            <point x="0.9375" y="0.0833333" />
+                            <point x="0.9375" y="0.9375" />
+                            <point x="0.0625" y="0.9375" />
                         </collision-poly>
                     </frame>
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type global="1" name="MJMusic" sid="402203337718309">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="Audio" sid="697230726546763">
+            <plugin id="Audio" />
         </object-type>
     </object-folder>
     <families />
@@ -265,13 +267,30 @@
         <event-sheet>Event sheet 1.xml</event-sheet>
         <event-sheet>Player.xml</event-sheet>
         <event-sheet>MJ.xml</event-sheet>
+        <event-sheet>Music.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="1" />
         <global-instance type="Mouse" uid="2" />
+        <global-instance type="Audio" uid="13">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder />
-    <music-folder />
+    <music-folder>
+        <file name="MichaelJackson.ogg" />
+    </music-folder>
     <files-folder>
         <file-folder name="Icons">
             <file name="icon-16.png" />
