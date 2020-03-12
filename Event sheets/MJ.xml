@@ -114,7 +114,7 @@
         <event-block sid="463472749016954">
             <conditions>
                 <condition id="-6" name="Every X seconds" sid="740684930193278" type="System">
-                    <param id="0" name="Interval (seconds)">round(random(0))/2+0.5</param>
+                    <param id="0" name="Interval (seconds)">round(random(1))/2+0.5</param>
                 </condition>
                 <condition id="-14" name="Compare variable" sid="959679292235630" type="System">
                     <param id="0" name="Variable">Generate</param>
@@ -428,27 +428,18 @@
                 <condition id="-2" name="On start of layout" sid="106438765860815" type="System" />
             </conditions>
             <actions>
+                <action id="-9" name="Set value" sid="213433705130114" type="System">
+                    <param id="0" name="Variable">Generate</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="441501172903339" type="System">
+                    <param id="0" name="Seconds">0.34</param>
+                </action>
                 <action id="0" name="Play" sid="528184992677960" type="Audio">
                     <param id="0" name="Audio file">MichaelJackson</param>
                     <param id="2" name="Loop">0</param>
                     <param id="3" name="Volume">0</param>
                     <param id="1" name="Tag (optional)">&quot;Main&quot;</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="189216395223023">
-            <conditions>
-                <condition id="5" name="Is tag playing" sid="490232737878935" type="Audio">
-                    <param id="0" name="Tag">&quot;Main&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-16" name="Wait" sid="441501172903339" type="System">
-                    <param id="0" name="Seconds">0.34</param>
-                </action>
-                <action id="-9" name="Set value" sid="213433705130114" type="System">
-                    <param id="0" name="Variable">Generate</param>
-                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
         </event-block>
