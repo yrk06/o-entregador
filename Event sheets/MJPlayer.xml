@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MJPlayer</name>
+    <events>
+        <event-block sid="348359336515849">
+            <conditions>
+                <condition id="12" name="Compare speed" sid="888801560973527" type="Player">
+                    <param id="0" name="Comparison">1</param>
+                    <param id="1" name="Number">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="6" name="Set speed" sid="679842760289108" type="Player">
+                    <param id="0" name="Speed">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="238330026147418">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="960177771268906" type="Keyboard">
+                    <param id="0" name="Key">87</param>
+                </condition>
+                <condition id="0" name="On key pressed" sid="612650962920487" type="Keyboard">
+                    <param id="0" name="Key">38</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="329775180480689" type="Player">
+                    <param id="0" name="Animation">&quot;Up&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="839496994893012">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="887796744443830" type="Keyboard">
+                    <param id="0" name="Key">65</param>
+                </condition>
+                <condition id="0" name="On key pressed" sid="861530678965028" type="Keyboard">
+                    <param id="0" name="Key">37</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="827511871211485" type="Player">
+                    <param id="0" name="Animation">&quot;Left&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="247224355930252">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="242320991533867" type="Keyboard">
+                    <param id="0" name="Key">83</param>
+                </condition>
+                <condition id="0" name="On key pressed" sid="289138236720718" type="Keyboard">
+                    <param id="0" name="Key">40</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="457847438626560" type="Player">
+                    <param id="0" name="Animation">&quot;Down&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="831297771719994">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="408086826149676" type="Keyboard">
+                    <param id="0" name="Key">68</param>
+                </condition>
+                <condition id="0" name="On key pressed" sid="736493404416868" type="Keyboard">
+                    <param id="0" name="Key">39</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="810657171531583" type="Player">
+                    <param id="0" name="Animation">&quot;Right&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

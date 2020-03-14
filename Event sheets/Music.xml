@@ -10,11 +10,7 @@
             <actions>
                 <action id="2" name="Set at X" sid="825916485664586" type="MJMusic">
                     <param id="0" name="X">0</param>
-                    <param id="1" name="Value">4.63</param>
-                </action>
-                <action id="2" name="Set at X" sid="185777049475135" type="MJMusic">
-                    <param id="0" name="X">1</param>
-                    <param id="1" name="Value">5.63</param>
+                    <param id="1" name="Value">20</param>
                 </action>
             </actions>
         </event-block>
