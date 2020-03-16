@@ -15,7 +15,11 @@
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -46,18 +50,35 @@
     <object-folder>
         <object-type name="Player" sid="465218445399113">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="isJumping" sid="427704123626783" type="boolean" />
+                <instance-variable name="shouldShake" sid="716414719038641" type="boolean" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction" sid="770233363734195">
                     <behavior id="EightDir" />
                 </behavior-type>
+                <behavior-type name="ScrollTo" sid="620156941465783">
+                    <behavior id="scrollto" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="942881243613832" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Desktop\tiles dos personagens (the deliverer).png" />
+                </animation>
+                <animation framecount="2" loop="1" name="Right" pingpong="1" repeatcount="1" repeatto="0" sid="712391877623718" speed="6">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Desktop\tiles dos personagens (the deliverer).png" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
-                <animation framecount="3" loop="0" name="Jump" pingpong="0" repeatcount="1" repeatto="0" sid="712391877623718" speed="5">
+                <animation framecount="2" loop="0" name="Left" pingpong="0" repeatcount="1" repeatto="0" sid="756517927072154" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Desktop\tiles dos personagens (the deliverer).png" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Up" pingpong="0" repeatcount="1" repeatto="0" sid="588148206322086" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Desktop\tiles dos personagens (the deliverer).png" />
+                </animation>
+                <animation framecount="2" loop="0" name="Down" pingpong="0" repeatcount="1" repeatto="0" sid="933926599459419" speed="4">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Desktop\tiles dos personagens (the deliverer).png" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -68,6 +89,43 @@
         <object-type name="Mouse" sid="323168898520964">
             <plugin id="Mouse" />
         </object-type>
+        <object-type name="Escapamento" sid="721445509494310">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="DanoMax" sid="826119537755193" type="number" />
+                <instance-variable name="isAtacking" sid="124029481605153" type="boolean" />
+                <instance-variable name="AttackTime" sid="396752603021234" type="number" />
+                <instance-variable name="CoolDown" sid="403523231294706" type="number" />
+                <instance-variable name="IsInCooldown" sid="925285459014885" type="boolean" />
+                <instance-variable name="Strength" sid="719102381488623" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pin" sid="813366248761571">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="Timer" sid="234662426047150">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="569878774229801" speed="5">
+                    <frame duration="1" hotspotX="0.0625" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="mentos" sid="728402037305117">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="304735929778877">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="996659756530383" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -75,6 +133,7 @@
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>Player.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="1" />

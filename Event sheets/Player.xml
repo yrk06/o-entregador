@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Player</name>
+    <events>
+        <event-block sid="677029340569146">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="770188078158836" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="672716189752634">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="524516176369385" type="Player">
+                            <param id="0" name="Instance variable">isJumping</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="295687967612309" type="Player">
+                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="531967556233679" type="Player">
+                            <param id="0" name="Instance variable">isJumping</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="562535204396838">
+            <conditions>
+                <condition id="4" name="On finished" sid="232401403636446" type="Player">
+                    <param id="0" name="Animation">&quot;Jump&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="976340673532508" type="Player">
+                    <param id="0" name="Instance variable">isJumping</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="583657027894729">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="135895545464307" type="Keyboard">
+                    <param id="0" name="Key">90</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="674273937152879">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="902441330168137" type="Escapamento">
+                            <param id="0" name="Instance variable">isAtacking</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="295167920617207" type="Escapamento">
+                            <param id="0" name="Instance variable">IsInCooldown</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="937097502342047" type="Escapamento">
+                            <param id="0" name="Instance variable">isAtacking</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Timer" id="0" name="Start timer" sid="770112383629921" type="Escapamento">
+                            <param id="0" name="Duration">Escapamento.AttackTime</param>
+                            <param id="1" name="Type">0</param>
+                            <param id="2" name="Tag">&quot;AttackTime&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="630482009562143">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="913256052429597" type="Keyboard">
+                    <param id="0" name="Key">67</param>
+                </condition>
+                <condition id="0" name="On click" sid="803237934579152" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="186578191798221" type="System">
+                    <param id="0" name="Object to create">mentos</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">Player.X</param>
+                    <param id="3" name="Y">Player.Y</param>
+                </action>
+                <action id="-8" name="Set angle" sid="582272879424929" type="mentos">
+                    <param id="0" name="Angle">angle(Player.X,Player.Y,Mouse.X,Mouse.Y)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="496234379040970">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="461538819948243" type="Player">
+                            <param id="0" name="Instance variable">shouldShake</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="ScrollTo" id="0" name="Shake" sid="362427069809756" type="Player">
+                            <param id="0" name="Magnitude">10</param>
+                            <param id="1" name="Duration">1</param>
+                            <param id="2" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="212597568483562">
+            <conditions>
+                <condition behavior="Timer" id="0" name="On timer" sid="799598748038748" type="Escapamento">
+                    <param id="0" name="Tag">&quot;AttackTime&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="409795446684289" type="Escapamento">
+                    <param id="0" name="Instance variable">isAtacking</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="777089506755726" type="Escapamento">
+                    <param id="0" name="Instance variable">IsInCooldown</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action behavior="Timer" id="0" name="Start timer" sid="649082135403124" type="Escapamento">
+                    <param id="0" name="Duration">Escapamento.CoolDown</param>
+                    <param id="1" name="Type">0</param>
+                    <param id="2" name="Tag">&quot;CooldownM&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="931418628270353">
+            <conditions>
+                <condition behavior="Timer" id="0" name="On timer" sid="131128674298635" type="Escapamento">
+                    <param id="0" name="Tag">&quot;CooldownM&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="787380901012662" type="Escapamento">
+                    <param id="0" name="Instance variable">IsInCooldown</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="389669708841333">
+            <conditions>
+                <condition id="2" name="Key is down" sid="765991063240070" type="Keyboard">
+                    <param id="0" name="Key">87</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="643853537839032" type="Player">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="308208027821163">
+            <conditions>
+                <condition id="2" name="Key is down" sid="314496935845298" type="Keyboard">
+                    <param id="0" name="Key">65</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="600660813333393" type="Player">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="172980137826686">
+            <conditions>
+                <condition id="2" name="Key is down" sid="516453205107943" type="Keyboard">
+                    <param id="0" name="Key">83</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="610127204919800" type="Player">
+                    <param id="0" name="Control">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="382370885642342">
+            <conditions>
+                <condition id="2" name="Key is down" sid="128470468360107" type="Keyboard">
+                    <param id="0" name="Key">68</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="735877388899111" type="Player">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="875930286644129">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="173608502704500" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="514761171682886" type="Escapamento">
+                    <param id="0" name="Pin to">Player</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="418910853128056">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="397753988782373" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <variable constant="0" name="AngleTo" sid="629281029026882" static="0" type="number">0</variable>
+                <event-block sid="275631199237106">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="232198557090816" type="System">
+                            <param id="0" name="First value">angle(Player.X,Player.Y,Mouse.X,Mouse.Y)</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="893981875507810" type="System">
+                            <param id="0" name="Variable">AngleTo</param>
+                            <param id="1" name="Value">angle(Player.X,Player.Y,Mouse.X,Mouse.Y) + 360</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="336589881820758">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="732861718021332" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="789350608204983" type="System">
+                            <param id="0" name="Variable">AngleTo</param>
+                            <param id="1" name="Value">angle(Player.X,Player.Y,Mouse.X,Mouse.Y)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="126087248943834">
+                    <conditions />
+                    <actions>
+                        <action id="-10" name="Set value" sid="871061497833475" type="Escapamento">
+                            <param id="0" name="Instance variable">Strength</param>
+                            <param id="1" name="Value">abs(AngleTo - Escapamento.Angle)</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="184543219550753" type="Escapamento">
+                            <param id="0" name="Angle">angle(Player.X,Player.Y,Mouse.X,Mouse.Y)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="109887002688608">
+                    <conditions>
+                        <condition behavior="8Direction" id="0" name="Is moving" sid="336164576585707" type="Player" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="420133316551195">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="883880911347437" type="System">
+                                    <param id="0" name="First value">Player.8Direction.VectorX</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">0.1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="903272342832554" type="Player">
+                                    <param id="0" name="Animation">&quot;Right&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="620177285592184">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="290937526597904" type="System" />
+                                <condition id="-8" name="Compare two values" sid="664565158333805" type="System">
+                                    <param id="0" name="First value">Player.8Direction.VectorX</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">-0.1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="966601295401780" type="Player">
+                                    <param id="0" name="Animation">&quot;Left&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="668446110564946">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="963062558115217" type="System">
+                                    <param id="0" name="First value">Player.8Direction.VectorY</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">0.1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="287720668293270" type="Player">
+                                    <param id="0" name="Animation">&quot;Down&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="864031030671441">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="912455689587396" type="System" />
+                                <condition id="-8" name="Compare two values" sid="874153317791027" type="System">
+                                    <param id="0" name="First value">Player.8Direction.VectorY</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">-0.1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="538283126406365" type="Player">
+                                    <param id="0" name="Animation">&quot;Up&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="677443915362897">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="489315584017360" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="798538112622606" type="Player">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
