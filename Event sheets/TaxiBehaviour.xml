@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>TaxiBehaviour</name>
+    <events>
+        <event-block sid="834648549297255">
+            <conditions>
+                <condition id="-11" name="For Each" sid="982129426573334" type="System">
+                    <param id="0" name="Object">Taxi</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="316087026059465">
+                    <conditions>
+                        <condition behavior="CustomMovement" id="1" name="Compare speed" sid="320612116568220" type="Taxi">
+                            <param id="0" name="Which">0</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Speed">Taxi.Car.MaxSpeed</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="882315767905057">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="480969302138511" type="Taxi">
+                                    <param id="0" name="Instance variable">isActive</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="990831490268843" type="Taxi">
+                                    <param id="0" name="Instance variable">Scripted</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="CustomMovement" id="3" name="Accelerate" sid="220613517933570" type="Taxi">
+                                    <param id="0" name="Which">1</param>
+                                    <param id="1" name="Acceleration">400 * cos(Taxi.Angle)</param>
+                                </action>
+                                <action behavior="CustomMovement" id="3" name="Accelerate" sid="953550619636456" type="Taxi">
+                                    <param id="0" name="Which">2</param>
+                                    <param id="1" name="Acceleration">400 * sin(Taxi.Angle)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

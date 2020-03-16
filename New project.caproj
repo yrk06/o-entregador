@@ -10,16 +10,25 @@
     <unique-id>29z4xr7btid93</unique-id>
     <saved-with-version>27500</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Car" version="1">Car</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="custom" version="1">Custom Movement</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -60,6 +69,12 @@
                 </behavior-type>
                 <behavior-type name="ScrollTo" sid="620156941465783">
                     <behavior id="scrollto" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="786919239398318">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="Timer" sid="925191736078530">
+                    <behavior id="Timer" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -126,20 +141,403 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Taxi" sid="635653462183051">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="0 for X axis and 1 for Y" name="Direction" sid="868996334389617" type="number" />
+                <instance-variable name="isActive" sid="522215046695057" type="boolean" />
+                <instance-variable name="Life" sid="193366561668991" type="number" />
+                <instance-variable name="isBoss" sid="676932161180125" type="boolean" />
+                <instance-variable name="Scripted" sid="603834997264749" type="boolean" />
+                <instance-variable name="ID" sid="697171407264975" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Car" sid="557584603223689">
+                    <behavior id="Car" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="436298627103472">
+                    <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="CustomMovement" sid="215623912055621">
+                    <behavior id="custom" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="211565224418136">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="256608019498248" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="6" loop="0" name="Blink" pingpong="0" repeatcount="1" repeatto="0" sid="598146615556698" speed="12">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Boss" pingpong="0" repeatcount="1" repeatto="0" sid="247916023783156" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="6" loop="0" name="BossBlink" pingpong="0" repeatcount="1" repeatto="0" sid="916028491501433" speed="12">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Uber" pingpong="0" repeatcount="1" repeatto="0" sid="480476922198049" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="6" loop="0" name="UberBlink" pingpong="0" repeatcount="1" repeatto="0" sid="347116150306179" speed="12">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="UberBoss" pingpong="0" repeatcount="1" repeatto="0" sid="904597373042539" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="6" loop="0" name="UberBossBlink" pingpong="0" repeatcount="1" repeatto="0" sid="620125565580724" speed="12">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Audio" sid="773495121195660">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="tx_boss_unspawn" sid="895240109388679">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="359687204740124" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ParkingLot" sid="844076119499418">
+            <plugin id="Tilemap" />
+            <texture original-source="D:\Construct\F1\ParkingLot.png" />
+            <tiles>
+                <tile id="0">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="0" y="0" />
+                        <point x="0" y="0" />
+                        <point x="0" y="0" />
+                    </collision-poly>
+                </tile>
+                <tile id="1">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="0" y="0" />
+                        <point x="0" y="0" />
+                        <point x="0" y="0" />
+                    </collision-poly>
+                </tile>
+            </tiles>
+        </object-type>
+        <object-type name="TaxiPortal" sid="708916002102601">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="372563805102162" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="CovilZuber" sid="668827282587854">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="951392526997638">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="ZuberTrigger" sid="347660135629802">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Active" sid="432424229874160" type="boolean" />
+                <instance-variable name="ID" sid="670244082673245" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Solid" sid="254801616000907">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="452512751677725" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SolidMap" sid="819028843876761">
+            <plugin id="Tilemap" />
+            <behaviors>
+                <behavior-type name="Solid" sid="144104545336413">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+            <tiles />
+        </object-type>
+        <object-type name="ZuberPredio" sid="160717538044182">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="753092786839678" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Construct\Predio.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TaxiTutorial" sid="418974262015472">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="ID" sid="904861595418036" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Fade" sid="813442217963313">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Layout 1.xml</layout>
+        <layout>TaxiBossMain.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
         <event-sheet>Player.xml</event-sheet>
+        <event-sheet>TaxiBoss.xml</event-sheet>
+        <event-sheet>TaxiBehaviour.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="1" />
         <global-instance type="Mouse" uid="2" />
+        <global-instance type="Audio" uid="7">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
     </global-instances>
-    <sounds-folder />
+    <sounds-folder>
+        <file name="10convert.com_Final-Boss-Super-Mario-Bros-Super-Mario-Bros-3-Super-Mario-Maker-2-Music-Extended_0uuYbp3Zcws (online-audio-converter.com).m4a" />
+        <file name="10convert.com_Final-Boss-Super-Mario-Bros-Super-Mario-Bros-3-Super-Mario-Maker-2-Music-Extended_0uuYbp3Zcws (online-audio-converter.com).ogg" />
+        <file name="101118__darkozl__slowdown.ogg" />
+    </sounds-folder>
     <music-folder />
     <files-folder>
         <file-folder name="Icons">

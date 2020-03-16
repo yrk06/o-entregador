@@ -1,0 +1,922 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>TaxiBoss</name>
+    <events>
+        <include>TaxiBehaviour</include>
+        <variable constant="0" name="BossLife" sid="324539928876188" static="0" type="number">30</variable>
+        <include>Player</include>
+        <variable constant="0" name="SpeedMax" sid="680949902838634" static="0" type="number">100</variable>
+        <variable constant="0" name="SpawnTime" sid="727865258802438" static="0" type="number">1</variable>
+        <variable constant="0" name="CanSpawnBoss" sid="480925667999992" static="0" type="number">0</variable>
+        <variable constant="0" name="Boss" sid="278145354335684" static="0" type="number">0</variable>
+        <variable constant="0" name="SlowDown" sid="853585977354140" static="0" type="number">0</variable>
+        <variable constant="0" name="ShouldSpawnCar" sid="924064774147308" static="0" type="number">0</variable>
+        <variable constant="0" name="ShouldSpawnPortal" sid="784578479321326" static="0" type="number">0</variable>
+        <variable constant="0" name="MinSpawnTime" sid="594260887776993" static="0" type="number">0.3</variable>
+        <variable constant="0" name="Wave" sid="575187537371827" static="0" type="number">-1</variable>
+        <variable constant="0" name="MaxSpeedMax" sid="149049127819753" static="0" type="number">150</variable>
+        <event-block sid="244548523974764">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="670687231669686" type="System">
+                    <param id="0" name="Interval (seconds)">SpawnTime</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="784738870028906" type="System">
+                    <param id="0" name="Variable">ShouldSpawnCar</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="901087748276753" type="System">
+                    <param id="0" name="Object to create">Taxi</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">-200</param>
+                    <param id="3" name="Y">-200</param>
+                </action>
+                <action id="-10" name="Set value" sid="807062294884039" type="Taxi">
+                    <param id="0" name="Instance variable">Direction</param>
+                    <param id="1" name="Value">random(100)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="666130470680053">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="661398347788926" type="Taxi">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="640700800933896" type="Taxi">
+                            <param id="0" name="X">random(854-32)+32</param>
+                            <param id="1" name="Y">-24</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="298754283728418" type="Taxi">
+                            <param id="0" name="Angle">90</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="954937871384840" type="Taxi">
+                            <param id="0" name="X">Taxi.X - Taxi.X % 48</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="463867914712547">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="657448531832779" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="916175791791044" type="Taxi">
+                            <param id="0" name="X">-24</param>
+                            <param id="1" name="Y">random(480-32) + 32</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="144663793028447" type="Taxi">
+                            <param id="0" name="Y">Taxi.Y - Taxi.Y % 48</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="477697239008852">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="932008558569290" type="System">
+                            <param id="0" name="Variable">Wave</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="526769977177964" type="Taxi">
+                            <param id="0" name="Animation">&quot;Uber&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="905019549944338">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="747323578597229" type="System">
+                            <param id="0" name="Variable">CanSpawnBoss</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="959427697161788" type="System">
+                            <param id="0" name="Variable">Boss</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="881015342646390" type="Taxi">
+                            <param id="0" name="Instance variable">isBoss</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="368381588235907" type="Taxi">
+                            <param id="0" name="Animation">&quot;Boss&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="493623995762175" type="System">
+                            <param id="0" name="Variable">Boss</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="407882980679227" type="Taxi">
+                            <param id="0" name="Instance variable">Life</param>
+                            <param id="1" name="Value">BossLife</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="291680523426981">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="570704597241143" type="System">
+                                    <param id="0" name="Variable">Wave</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="207822511006415" type="Taxi">
+                                    <param id="0" name="Animation">&quot;UberBoss&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="250486373808482">
+            <conditions>
+                <condition id="-11" name="For Each" sid="822116664018209" type="System">
+                    <param id="0" name="Object">Taxi</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Car" id="7" name="Simulate control" sid="646064975522939" type="Taxi">
+                    <param id="0" name="Control">2</param>
+                </action>
+                <action behavior="Car" id="4" name="Set max speed" sid="877405757076244" type="Taxi">
+                    <param id="0" name="Max Speed">SpeedMax</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="513859973033130">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="656376568563093" type="Taxi">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="339813438641037" type="Taxi">
+                    <param id="0" name="Instance variable">isActive</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="710949988207082" type="Audio" />
+                <action id="-26" name="Restart layout" sid="327973118034431" type="System" />
+            </actions>
+            <sub-events>
+                <event-block sid="710865614733891">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="367978610681214" type="System">
+                            <param id="0" name="Variable">Wave</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="930792419364501" type="System">
+                            <param id="0" name="Variable">Boss</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="722184024384304" type="System">
+                            <param id="0" name="Variable">BossLife</param>
+                            <param id="1" name="Value">40</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="168314643693977" type="System">
+                            <param id="0" name="Variable">CanSpawnBoss</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="450694570547571" type="System">
+                            <param id="0" name="Variable">SpawnTime</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="740714062222091" type="System">
+                            <param id="0" name="Variable">SpeedMax</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                        <action id="-13" name="Set time scale" sid="622964658145866" type="System">
+                            <param id="0" name="Time scale">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="957435022904406" type="Audio">
+                            <param id="0" name="Audio file">10convert.com_Final-Boss-Super-Mario-Bros-Super-Mario-Bros-3-Super-Mario-Maker-2-Music-Extended_0uuYbp3Zcws (online-audio-converter.com)</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;BossMusic&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="219129043036212">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="305978947711255" type="System">
+                            <param id="0" name="Variable">Wave</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="659304486257320" type="System">
+                            <param id="0" name="Variable">Boss</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="900101120919117" type="System">
+                            <param id="0" name="Variable">BossLife</param>
+                            <param id="1" name="Value">40</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="530129535641164" type="System">
+                            <param id="0" name="Variable">CanSpawnBoss</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="846753005805141" type="System">
+                            <param id="0" name="Variable">SpawnTime</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="319960604742446" type="System">
+                            <param id="0" name="Variable">SpeedMax</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                        <action id="-13" name="Set time scale" sid="847230820072611" type="System">
+                            <param id="0" name="Time scale">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="186566409684310" type="Audio">
+                            <param id="0" name="Audio file">10convert.com_Final-Boss-Super-Mario-Bros-Super-Mario-Bros-3-Super-Mario-Maker-2-Music-Extended_0uuYbp3Zcws (online-audio-converter.com)</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;BossMusic&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="741882373942835">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="863744033430788" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Fade" id="1" name="Start fade" sid="351371769757535" type="CovilZuber" />
+                <action id="4" name="Preload" sid="350481929877415" type="Audio">
+                    <param id="0" name="Audio file">10convert.com_Final-Boss-Super-Mario-Bros-Super-Mario-Bros-3-Super-Mario-Maker-2-Music-Extended_0uuYbp3Zcws (online-audio-converter.com)</param>
+                </action>
+                <action id="-28" name="Set canvas size" sid="876601178403014" type="System">
+                    <param id="0" name="Width">640.5</param>
+                    <param id="1" name="Height">360</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="330871844682971" type="TaxiTutorial">
+                    <param id="0" name="Opacity">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="817290612588740">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="196147069674514" type="System">
+                            <param id="0" name="Variable">Wave</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="864027586678333" type="Player">
+                            <param id="0" name="X">random(654)+100</param>
+                            <param id="1" name="Y">random(280)+100</param>
+                        </action>
+                        <action behavior="ScrollTo" id="1" name="Set enabled" sid="541395505995768" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-7" name="Scroll to position" sid="148978808211079" type="System">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="394913509626400" type="ZuberTrigger">
+                            <param id="0" name="Instance variable">Active</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-28" name="Set canvas size" sid="671706998794655" type="System">
+                            <param id="0" name="Width">854</param>
+                            <param id="1" name="Height">480</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="522905434207996" type="System">
+                            <param id="0" name="Variable">ShouldSpawnCar</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="809563141488048">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="492532133921614" type="System">
+                    <param id="0" name="Interval (seconds)">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="356877838028552" type="System">
+                    <param id="0" name="Variable">ShouldSpawnCar</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="981987903417519">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="421027383686841" type="System">
+                            <param id="0" name="Variable">SpawnTime</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">MinSpawnTime</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="780680186706925" type="System">
+                            <param id="0" name="Variable">SpawnTime</param>
+                            <param id="1" name="Value">0.1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="472473279644193">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="479351733413053" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="481483979682374" type="System">
+                            <param id="0" name="Variable">SpawnTime</param>
+                            <param id="1" name="Value">MinSpawnTime</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="404265047759122">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="198778551482327" type="System">
+                            <param id="0" name="Variable">SpeedMax</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">MaxSpeedMax</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="580917853495659" type="System">
+                            <param id="0" name="Variable">SpeedMax</param>
+                            <param id="1" name="Value">20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="914561500378596">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="174601584971011" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="633700876779119" type="System">
+                            <param id="0" name="Variable">SpeedMax</param>
+                            <param id="1" name="Value">MaxSpeedMax</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="104065775027719">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="918327019728548" type="mentos">
+                    <param id="0" name="Object">Taxi</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="997490133992040" type="Taxi">
+                    <param id="0" name="Instance variable">Life</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="799713370699707" type="mentos" />
+            </actions>
+            <sub-events>
+                <event-block sid="232581604955159">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="942223384852517" type="Taxi">
+                            <param id="0" name="Instance variable">isBoss</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="689470140244558" type="Taxi">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="384327745157683">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="459140836120542" type="Taxi">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="185840457472841" type="Taxi">
+                                    <param id="0" name="Animation">&quot;Blink&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="781104667227343">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="533612663921857" type="Taxi">
+                                    <param id="0" name="Animation">&quot;Uber&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="911201782904109" type="Taxi">
+                                    <param id="0" name="Animation">&quot;UberBlink&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="526710777614691">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="760022426657647" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="991691299246883" type="System">
+                            <param id="0" name="Variable">BossLife</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="747245193543175">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="964072716548071" type="Taxi">
+                                    <param id="0" name="Animation">&quot;Boss&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="342134451100010" type="Taxi">
+                                    <param id="0" name="Animation">&quot;BossBlink&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="119913791427847">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="911389318855906" type="Taxi">
+                                    <param id="0" name="Animation">&quot;UberBoss&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="670833852663474" type="Taxi">
+                                    <param id="0" name="Animation">&quot;UberBossBlink&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="862524140711609">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="845477216940846" type="Taxi">
+                    <param id="0" name="Instance variable">Life</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="127410091627964" type="Taxi" />
+                <action id="-10" name="Add to" sid="815805750324382" type="System">
+                    <param id="0" name="Variable">SlowDown</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="563822372047738">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="307125590290722" type="Taxi">
+                            <param id="0" name="Instance variable">isBoss</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="345778155909930">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="607383565629269" type="System">
+                                    <param id="0" name="Variable">ShouldSpawnPortal</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="394640781423807" type="System">
+                                    <param id="0" name="Object to create">TaxiPortal</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">random(654)+100</param>
+                                    <param id="3" name="Y">random(280)+100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="985967818669288">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="624502834873064" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="822779758499472" type="System">
+                                    <param id="0" name="Variable">ShouldSpawnPortal</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="314754155644595" type="System">
+                                    <param id="0" name="Variable">ShouldSpawnCar</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="6" name="Stop" sid="206761368194458" type="Audio">
+                                    <param id="0" name="Tag">&quot;BossMusic&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="469258767964751" type="System">
+                                    <param id="0" name="Variable">Wave</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="302302490939757" type="System">
+                                    <param id="0" name="Variable">SpawnTime</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="642336055202422" type="System">
+                                    <param id="0" name="Variable">SpeedMax</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="805412723299729" type="System">
+                                    <param id="0" name="Variable">BossLife</param>
+                                    <param id="1" name="Value">40</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="980159312544918" type="System">
+                                    <param id="0" name="Variable">Boss</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="746923999252401" type="System">
+                                    <param id="0" name="Variable">CanSpawnBoss</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="970662753243994" type="System">
+                                    <param id="0" name="Variable">MinSpawnTime</param>
+                                    <param id="1" name="Value">0.2</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="944489517555502" type="System">
+                                    <param id="0" name="Variable">MaxSpeedMax</param>
+                                    <param id="1" name="Value">200</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="963736432851199" type="System">
+                                    <param id="0" name="Seconds">10</param>
+                                </action>
+                                <action id="0" name="Play" sid="605318995696846" type="Audio">
+                                    <param id="0" name="Audio file">10convert.com_Final-Boss-Super-Mario-Bros-Super-Mario-Bros-3-Super-Mario-Maker-2-Music-Extended_0uuYbp3Zcws (online-audio-converter.com)</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;BossMusic&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="234573239133556" type="System">
+                                    <param id="0" name="Variable">ShouldSpawnCar</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="446765092557535">
+            <conditions>
+                <condition id="4" name="On finished" sid="804488130892057" type="Taxi">
+                    <param id="0" name="Animation">&quot;Blink&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="992264630887531" type="Taxi">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="835239879753610">
+            <conditions>
+                <condition id="4" name="On finished" sid="283089966663604" type="Taxi">
+                    <param id="0" name="Animation">&quot;BossBlink&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="208316208923810" type="Taxi">
+                    <param id="0" name="Animation">&quot;Boss&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="771834943704058">
+            <conditions>
+                <condition id="4" name="On finished" sid="290592334220667" type="Taxi">
+                    <param id="0" name="Animation">&quot;UberBlink&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="195189512805624" type="Taxi">
+                    <param id="0" name="Animation">&quot;Uber&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="547357731075646">
+            <conditions>
+                <condition id="4" name="On finished" sid="421554879649040" type="Taxi">
+                    <param id="0" name="Animation">&quot;UberBossBlink&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="955687543980602" type="Taxi">
+                    <param id="0" name="Animation">&quot;UberBoss&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="643536152520486">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="973750646139483" type="System">
+                    <param id="0" name="Variable">CanSpawnBoss</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="423392744735911" type="System">
+                    <param id="0" name="Variable">SpawnTime</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">2* MinSpawnTime</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="801192864879459" type="System">
+                    <param id="0" name="Variable">CanSpawnBoss</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="442045162992397">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="723891265601228" type="Taxi">
+                    <param id="0" name="Object">tx_boss_unspawn</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="580984687053119" type="Taxi">
+                    <param id="0" name="Instance variable">isBoss</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="941234721467422" type="System">
+                    <param id="0" name="Variable">Boss</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="346303334645965" type="Taxi" />
+            </actions>
+        </event-block>
+        <event-block sid="387992934470846">
+            <conditions>
+                <condition id="0" name="On click" sid="786920986596283" type="Mouse">
+                    <param id="0" name="Mouse button">2</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="325108726724974">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="738409972576058" type="System">
+                            <param id="0" name="Variable">SlowDown</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set time scale" sid="908135620288099" type="System">
+                            <param id="0" name="Time scale">0.5</param>
+                        </action>
+                        <action behavior="Timer" id="0" name="Start timer" sid="317532139109830" type="Player">
+                            <param id="0" name="Duration">1.5</param>
+                            <param id="1" name="Type">0</param>
+                            <param id="2" name="Tag">&quot;slowdown&quot;</param>
+                        </action>
+                        <action behavior="8Direction" id="4" name="Set max speed" sid="964376637741659" type="Player">
+                            <param id="0" name="Max Speed">1.5* Player.8Direction.MaxSpeed</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="530135093508314" type="System">
+                            <param id="0" name="Variable">SlowDown</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="217408174651456" type="Audio">
+                            <param id="0" name="Audio file">101118__darkozl__slowdown</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;Slow&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="377971754969076">
+            <conditions>
+                <condition behavior="Timer" id="0" name="On timer" sid="788440232372628" type="Player">
+                    <param id="0" name="Tag">&quot;slowdown&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set time scale" sid="646230459621992" type="System">
+                    <param id="0" name="Time scale">1</param>
+                </action>
+                <action behavior="8Direction" id="4" name="Set max speed" sid="688993763632136" type="Player">
+                    <param id="0" name="Max Speed">(1/1.5)* Player.8Direction.MaxSpeed</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="192987508252235">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="957094591056692" type="TaxiPortal">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="542615113847485" type="System">
+                    <param id="0" name="Layout">&quot;Layout 1&quot;</param>
+                </action>
+                <action id="6" name="Stop" sid="264390061155180" type="Audio">
+                    <param id="0" name="Tag">&quot;BossMusic&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="915472758522631">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="179745064458237" type="ZuberTrigger">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="186984350434926" type="ZuberTrigger">
+                    <param id="0" name="Instance variable">Active</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="909967346912344">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="481267735287874" type="ZuberTrigger">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-28" name="Set canvas size" sid="133992482229237" type="System">
+                            <param id="0" name="Width">854</param>
+                            <param id="1" name="Height">480</param>
+                        </action>
+                        <action behavior="ScrollTo" id="1" name="Set enabled" sid="238377108498804" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-7" name="Scroll to position" sid="386913062109498" type="System">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="725663177422366" type="System">
+                            <param id="0" name="Variable">ShouldSpawnCar</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="896413937685894" type="System">
+                            <param id="0" name="Variable">Wave</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="949429156902639" type="Audio">
+                            <param id="0" name="Audio file">10convert.com_Final-Boss-Super-Mario-Bros-Super-Mario-Bros-3-Super-Mario-Maker-2-Music-Extended_0uuYbp3Zcws (online-audio-converter.com)</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;BossMusic&quot;</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="418077956860534" type="Player">
+                            <param id="0" name="Y">Player.Y -20</param>
+                        </action>
+                        <action behavior="Solid" id="0" name="Set enabled" sid="138180252022913" type="ZuberTrigger">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="345923038405057" type="ZuberTrigger">
+                            <param id="0" name="Instance variable">Active</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="567817437031474">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="659112211613072" type="ZuberTrigger">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="413350231018135" type="ZuberTrigger">
+                            <param id="0" name="Instance variable">Active</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="363075662753330">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="493935139367901" type="Taxi">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="440406385748245" type="Taxi">
+                                    <param id="0" name="Instance variable">isActive</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="CustomMovement" id="2" name="Set speed" sid="612324209059002" type="Taxi">
+                                    <param id="0" name="Which">1</param>
+                                    <param id="1" name="Speed">-190</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="877483719361007">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="541529815590500" type="ZuberTrigger">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="872546561350914" type="ZuberTrigger">
+                            <param id="0" name="Instance variable">Active</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="390203875658323">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="179488300352569" type="Taxi">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="611560298565466" type="Taxi">
+                                    <param id="0" name="Instance variable">isActive</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="CustomMovement" id="2" name="Set speed" sid="430395707676624" type="Taxi">
+                                    <param id="0" name="Which">1</param>
+                                    <param id="1" name="Speed">210</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="933497785625499">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="715790292975112" type="ZuberTrigger">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="649453612795944">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="894598837366606" type="TaxiTutorial">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Fade" id="1" name="Start fade" sid="266585088399919" type="TaxiTutorial" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="170732720027850">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="700606247358616" type="ZuberTrigger">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="617083272835921">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="851829117551690" type="TaxiTutorial">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Fade" id="1" name="Start fade" sid="319275311372107" type="TaxiTutorial" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
