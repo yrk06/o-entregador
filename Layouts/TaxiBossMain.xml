@@ -1191,6 +1191,40 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="TextBox" uid="40">
+                    <properties>
+                        <text></text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-16</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <instance-variables>
+                        <Speed>20</Speed>
+                        <isActive>false</isActive>
+                        <TextToDisplay>Look!! Its Zuber BOSS!!!!!!</TextToDisplay>
+                        <Letter>0</Letter>
+                        <ID>0</ID>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1216.021362305</x>
+                        <y>203.223464966</y>
+                        <z>0</z>
+                        <width>186.453369141</width>
+                        <height>48.063095093</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>

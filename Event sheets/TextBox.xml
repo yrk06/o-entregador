@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>TextBox</name>
+    <events>
+        <event-block sid="995373571557210">
+            <conditions>
+                <condition id="-11" name="For Each" sid="593598188760158" type="System">
+                    <param id="0" name="Object">TextBox</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="843095555752003" type="TextBox">
+                    <param id="0" name="Instance variable">isActive</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="790590150445607">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="697621114484101" type="System">
+                            <param id="0" name="Interval (seconds)">1/TextBox.Speed</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Append text" sid="530692037677688" type="TextBox">
+                            <param id="0" name="Text">mid(TextBox.TextToDisplay,TextBox.Letter,1)</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="106932663714687" type="TextBox">
+                            <param id="0" name="Instance variable">Letter</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="960780064192651">
+            <conditions>
+                <condition id="0" name="On click" sid="212688270558497" type="Mouse">
+                    <param id="0" name="Mouse button">2</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="402031828733393" type="TextBox">
+                    <param id="0" name="Instance variable">Speed</param>
+                    <param id="1" name="Value">TextBox.Speed*5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="276696754167122">
+            <conditions>
+                <condition id="3" name="On button released" sid="168859980614472" type="Mouse">
+                    <param id="0" name="Mouse button">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="860343273385463" type="TextBox">
+                    <param id="0" name="Instance variable">Speed</param>
+                    <param id="1" name="Value">TextBox.Speed/5</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

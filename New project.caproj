@@ -503,6 +503,16 @@
                 </behavior-type>
             </behaviors>
         </object-type>
+        <object-type name="TextBox" sid="309779249337681">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="Speed" sid="807682331307290" type="number" />
+                <instance-variable name="isActive" sid="379474784348941" type="boolean" />
+                <instance-variable name="TextToDisplay" sid="630136105315571" type="string" />
+                <instance-variable name="Letter" sid="147061747029868" type="number" />
+                <instance-variable name="ID" sid="675279583283940" type="number" />
+            </instance-variables>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -514,6 +524,7 @@
         <event-sheet>Player.xml</event-sheet>
         <event-sheet>TaxiBoss.xml</event-sheet>
         <event-sheet>TaxiBehaviour.xml</event-sheet>
+        <event-sheet>TextBox.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="1" />

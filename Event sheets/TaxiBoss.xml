@@ -3,9 +3,10 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>TaxiBoss</name>
     <events>
+        <include>TextBox</include>
         <include>TaxiBehaviour</include>
-        <variable constant="0" name="BossLife" sid="324539928876188" static="0" type="number">30</variable>
         <include>Player</include>
+        <variable constant="0" name="BossLife" sid="324539928876188" static="0" type="number">30</variable>
         <variable constant="0" name="SpeedMax" sid="680949902838634" static="0" type="number">100</variable>
         <variable constant="0" name="SpawnTime" sid="727865258802438" static="0" type="number">1</variable>
         <variable constant="0" name="CanSpawnBoss" sid="480925667999992" static="0" type="number">0</variable>
@@ -827,6 +828,21 @@
                                 <action behavior="CustomMovement" id="2" name="Set speed" sid="612324209059002" type="Taxi">
                                     <param id="0" name="Which">1</param>
                                     <param id="1" name="Speed">-190</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="518656898274180">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="830844248355225" type="TextBox">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="105637545256659" type="TextBox">
+                                    <param id="0" name="Instance variable">isActive</param>
+                                    <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
                         </event-block>
