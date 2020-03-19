@@ -43,8 +43,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>469</x>
-                        <y>242</y>
+                        <x>462</x>
+                        <y>396</y>
                         <z>0</z>
                         <width>16</width>
                         <height>16</height>
@@ -69,8 +69,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>742</x>
-                        <y>246</y>
+                        <x>735</x>
+                        <y>400</y>
                         <z>0</z>
                         <width>16</width>
                         <height>16</height>
@@ -110,8 +110,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>514</x>
-                        <y>222</y>
+                        <x>536</x>
+                        <y>350</y>
                         <z>0</z>
                         <width>256</width>
                         <height>256</height>
@@ -136,8 +136,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>601</x>
-                        <y>245</y>
+                        <x>594</x>
+                        <y>399</y>
                         <z>0</z>
                         <width>16</width>
                         <height>16</height>
@@ -162,8 +162,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>837</x>
-                        <y>243</y>
+                        <x>830</x>
+                        <y>397</y>
                         <z>0</z>
                         <width>16</width>
                         <height>16</height>
@@ -213,11 +213,14 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <Track>0</Track>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>441</x>
-                        <y>36</y>
+                        <y>37</y>
                         <z>0</z>
                         <width>48</width>
                         <height>48</height>
@@ -260,43 +263,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>143</x>
-                        <y>200</y>
+                        <x>114</x>
+                        <y>296</y>
                         <z>0</z>
                         <width>128</width>
                         <height>128</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Teclas" uid="29">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <Type>W</Type>
-                        <Active>false</Active>
-                        <Speed>100</Speed>
-                        <ShouldBePressed>false</ShouldBePressed>
-                        <Delay>0.8</Delay>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="DestroyOutsideLayout" />
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>873</x>
-                        <y>116</y>
-                        <z>0</z>
-                        <width>32</width>
-                        <height>32</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -316,7 +287,7 @@
                         <Active>false</Active>
                         <Speed>100</Speed>
                         <ShouldBePressed>false</ShouldBePressed>
-                        <Delay>1.8</Delay>
+                        <Delay>2.77</Delay>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="DestroyOutsideLayout" />
@@ -324,8 +295,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>873</x>
-                        <y>195</y>
+                        <x>871</x>
+                        <y>233</y>
                         <z>0</z>
                         <width>32</width>
                         <height>32</height>
@@ -336,7 +307,242 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Teclas" uid="31">
+                <instance type="KeyShow" uid="15">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <Track>0</Track>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>441</x>
+                        <y>143</y>
+                        <z>0</z>
+                        <width>48</width>
+                        <height>48</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="KeyShow" uid="16">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <Track>0</Track>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>441</x>
+                        <y>90</y>
+                        <z>0</z>
+                        <width>48</width>
+                        <height>48</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="KeyShow" uid="17">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <Track>0</Track>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>441</x>
+                        <y>196</y>
+                        <z>0</z>
+                        <width>48</width>
+                        <height>48</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Teclas" uid="18">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <Type>W</Type>
+                        <Active>false</Active>
+                        <Speed>100</Speed>
+                        <ShouldBePressed>false</ShouldBePressed>
+                        <Delay>0.8</Delay>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="DestroyOutsideLayout" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>929</x>
+                        <y>44</y>
+                        <z>0</z>
+                        <width>32</width>
+                        <height>32</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Teclas" uid="21">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <Type>W</Type>
+                        <Active>false</Active>
+                        <Speed>100</Speed>
+                        <ShouldBePressed>false</ShouldBePressed>
+                        <Delay>0.8</Delay>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="DestroyOutsideLayout" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>971</x>
+                        <y>47</y>
+                        <z>0</z>
+                        <width>32</width>
+                        <height>32</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Teclas" uid="19">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <Type>W</Type>
+                        <Active>false</Active>
+                        <Speed>100</Speed>
+                        <ShouldBePressed>false</ShouldBePressed>
+                        <Delay>1.2</Delay>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="DestroyOutsideLayout" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>900</x>
+                        <y>106</y>
+                        <z>0</z>
+                        <width>32</width>
+                        <height>32</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Teclas" uid="20">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <Type>W</Type>
+                        <Active>false</Active>
+                        <Speed>100</Speed>
+                        <ShouldBePressed>false</ShouldBePressed>
+                        <Delay>1.2</Delay>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="DestroyOutsideLayout" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>942</x>
+                        <y>105</y>
+                        <z>0</z>
+                        <width>32</width>
+                        <height>32</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Teclas" uid="22">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <Type>W</Type>
+                        <Active>false</Active>
+                        <Speed>100</Speed>
+                        <ShouldBePressed>false</ShouldBePressed>
+                        <Delay>1.8</Delay>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="DestroyOutsideLayout" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>918</x>
+                        <y>183</y>
+                        <z>0</z>
+                        <width>32</width>
+                        <height>32</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Teclas" uid="27">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -356,8 +562,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>872</x>
-                        <y>235</y>
+                        <x>1003</x>
+                        <y>218</y>
                         <z>0</z>
                         <width>32</width>
                         <height>32</height>
@@ -368,7 +574,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Teclas" uid="32">
+                <instance type="Teclas" uid="28">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -380,7 +586,7 @@
                         <Active>false</Active>
                         <Speed>100</Speed>
                         <ShouldBePressed>false</ShouldBePressed>
-                        <Delay>3.8</Delay>
+                        <Delay>1.8</Delay>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="DestroyOutsideLayout" />
@@ -388,72 +594,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>872</x>
-                        <y>353</y>
-                        <z>0</z>
-                        <width>32</width>
-                        <height>32</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Teclas" uid="33">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <Type>W</Type>
-                        <Active>false</Active>
-                        <Speed>100</Speed>
-                        <ShouldBePressed>false</ShouldBePressed>
-                        <Delay>2.8</Delay>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="DestroyOutsideLayout" />
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>875</x>
-                        <y>273</y>
-                        <z>0</z>
-                        <width>32</width>
-                        <height>32</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Teclas" uid="34">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <Type>W</Type>
-                        <Active>false</Active>
-                        <Speed>100</Speed>
-                        <ShouldBePressed>false</ShouldBePressed>
-                        <Delay>4.8</Delay>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="DestroyOutsideLayout" />
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>877</x>
-                        <y>463</y>
+                        <x>982</x>
+                        <y>171</y>
                         <z>0</z>
                         <width>32</width>
                         <height>32</height>

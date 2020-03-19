@@ -295,6 +295,9 @@
         </object-type>
         <object-type name="KeyShow" sid="609524760982146">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Track" sid="618179000398423" type="number" />
+            </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="691267002444798" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
@@ -348,6 +351,7 @@
     <sounds-folder />
     <music-folder>
         <file name="MichaelJackson.ogg" />
+        <file name="MJ jogo ogg.ogg" />
     </music-folder>
     <files-folder>
         <file-folder name="Icons">

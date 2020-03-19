@@ -11,11 +11,11 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="0">Layout 1</layout>
-        <layout order="3">MJ</layout>
+        <layout active="1" order="3">MJ</layout>
         <event-sheet order="1">Event sheet 1</event-sheet>
         <event-sheet order="2">Player</event-sheet>
         <event-sheet order="4">MJ</event-sheet>
-        <event-sheet active="1" order="5">MJPlayer</event-sheet>
+        <event-sheet order="5">MJPlayer</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
