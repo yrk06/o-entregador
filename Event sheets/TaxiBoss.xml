@@ -206,7 +206,7 @@
                         <action id="0" name="Play" sid="957435022904406" type="Audio">
                             <param id="0" name="Audio file">10convert.com_Final-Boss-Super-Mario-Bros-Super-Mario-Bros-3-Super-Mario-Maker-2-Music-Extended_0uuYbp3Zcws (online-audio-converter.com)</param>
                             <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">0</param>
+                            <param id="3" name="Volume">-10</param>
                             <param id="1" name="Tag (optional)">&quot;BossMusic&quot;</param>
                         </action>
                     </actions>
@@ -246,7 +246,7 @@
                         <action id="0" name="Play" sid="186566409684310" type="Audio">
                             <param id="0" name="Audio file">10convert.com_Final-Boss-Super-Mario-Bros-Super-Mario-Bros-3-Super-Mario-Maker-2-Music-Extended_0uuYbp3Zcws (online-audio-converter.com)</param>
                             <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">0</param>
+                            <param id="3" name="Volume">-10</param>
                             <param id="1" name="Tag (optional)">&quot;BossMusic&quot;</param>
                         </action>
                     </actions>
@@ -565,7 +565,7 @@
                                 <action id="0" name="Play" sid="605318995696846" type="Audio">
                                     <param id="0" name="Audio file">10convert.com_Final-Boss-Super-Mario-Bros-Super-Mario-Bros-3-Super-Mario-Maker-2-Music-Extended_0uuYbp3Zcws (online-audio-converter.com)</param>
                                     <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">0</param>
+                                    <param id="3" name="Volume">-10</param>
                                     <param id="1" name="Tag (optional)">&quot;BossMusic&quot;</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="234573239133556" type="System">
@@ -782,7 +782,7 @@
                         <action id="0" name="Play" sid="949429156902639" type="Audio">
                             <param id="0" name="Audio file">10convert.com_Final-Boss-Super-Mario-Bros-Super-Mario-Bros-3-Super-Mario-Maker-2-Music-Extended_0uuYbp3Zcws (online-audio-converter.com)</param>
                             <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">0</param>
+                            <param id="3" name="Volume">-10</param>
                             <param id="1" name="Tag (optional)">&quot;BossMusic&quot;</param>
                         </action>
                         <action id="-2" name="Set Y" sid="418077956860534" type="Player">

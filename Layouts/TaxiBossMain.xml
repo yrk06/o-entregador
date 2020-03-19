@@ -317,30 +317,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1344</x>
-                        <y>544</y>
-                        <z>0</z>
-                        <width>128</width>
-                        <height>512</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="ZuberPredio" uid="10">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>1216</x>
-                        <y>544</y>
+                        <x>1311</x>
+                        <y>-161</y>
                         <z>0</z>
                         <width>128</width>
                         <height>512</height>
@@ -420,17 +398,17 @@
                 <instance type="ZuberPredio" uid="20">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
+                        <initial-animation>Predio2</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1312</x>
-                        <y>-160</y>
+                        <x>1287</x>
+                        <y>541</y>
                         <z>0</z>
-                        <width>128</width>
+                        <width>256</width>
                         <height>512</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>

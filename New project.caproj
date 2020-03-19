@@ -490,6 +490,9 @@
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="753092786839678" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Construct\Predio.png" />
                 </animation>
+                <animation framecount="1" loop="0" name="Predio2" pingpong="0" repeatcount="1" repeatto="0" sid="345014147508996" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Construct\Predio2.png" />
+                </animation>
             </animation-folder>
         </object-type>
         <object-type name="TaxiTutorial" sid="418974262015472">
