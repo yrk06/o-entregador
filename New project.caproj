@@ -516,11 +516,232 @@
                 <instance-variable name="ID" sid="675279583283940" type="number" />
             </instance-variables>
         </object-type>
-    </object-folder>
+		<object-type name="MJ" sid="714757679225220">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Speed" sid="717772548602425" type="number" />
+                <instance-variable name="VectorX" sid="550524404483138" type="number" />
+                <instance-variable name="VectorY" sid="906102950907218" type="number" />
+                <instance-variable name="point" sid="997274995502738" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="8Direction" sid="375759401969030">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="983538003997552" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Desktop\tiles dos personagens (the deliverer).png">
+                        <collision-poly>
+                            <point x="0.3125" y="0" />
+                            <point x="0.875" y="0" />
+                            <point x="0.875" y="1" />
+                            <point x="0.3125" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="1" name="Right" pingpong="1" repeatcount="1" repeatto="0" sid="463361199870906" speed="6">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Desktop\tiles dos personagens (the deliverer).png">
+                        <collision-poly>
+                            <point x="0.3125" y="0" />
+                            <point x="0.875" y="0" />
+                            <point x="0.875" y="1" />
+                            <point x="0.3125" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.3125" y="0" />
+                            <point x="0.875" y="0" />
+                            <point x="0.875" y="1" />
+                            <point x="0.3125" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="Left" pingpong="0" repeatcount="1" repeatto="0" sid="454617345899172" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Desktop\tiles dos personagens (the deliverer).png">
+                        <collision-poly>
+                            <point x="0.0625" y="0" />
+                            <point x="0.625" y="0" />
+                            <point x="0.625" y="1" />
+                            <point x="0.0625" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.0625" y="0" />
+                            <point x="0.625" y="0" />
+                            <point x="0.625" y="1" />
+                            <point x="0.0625" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Up" pingpong="0" repeatcount="1" repeatto="0" sid="405828285509667" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Desktop\tiles dos personagens (the deliverer).png">
+                        <collision-poly>
+                            <point x="0.3125" y="0" />
+                            <point x="0.875" y="0" />
+                            <point x="0.875" y="1" />
+                            <point x="0.3125" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="Down" pingpong="0" repeatcount="1" repeatto="0" sid="193428511666679" speed="4">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Desktop\tiles dos personagens (the deliverer).png">
+                        <collision-poly>
+                            <point x="0.3125" y="0" />
+                            <point x="0.875" y="0" />
+                            <point x="0.875" y="1" />
+                            <point x="0.3125" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.3125" y="0" />
+                            <point x="0.875" y="0" />
+                            <point x="0.875" y="1" />
+                            <point x="0.3125" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+		<object-type name="MJCheckpoint" sid="383495180593762">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="NextPoint" sid="584205380367165" type="number" />
+                <instance-variable name="Point" sid="615321402307399" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="835956009387218" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+		<object-type name="MJTeclas" sid="511797642968276">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Type" sid="986840264532975" type="string" />
+                <instance-variable name="Active" sid="360296248307679" type="boolean" />
+                <instance-variable name="Speed" sid="850597807069635" type="number" />
+                <instance-variable name="ShouldBePressed" sid="109270650207452" type="boolean" />
+                <instance-variable name="Delay" sid="960704283358073" type="number" />
+                <instance-variable name="MasterDelay" sid="640516755846397" type="number" />
+                <instance-variable name="Music" sid="816056609691484" type="number" />
+                <instance-variable name="PreDefined" sid="474195840068906" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="654679391572520">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="W" pingpong="0" repeatcount="1" repeatto="0" sid="838473629020867" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Documents\W-Key.png" />
+                </animation>
+                <animation framecount="1" loop="0" name="A" pingpong="0" repeatcount="1" repeatto="0" sid="878727009950220" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Documents\A-Key.png">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="1" y="0.625" />
+                            <point x="1" y="0.1875" />
+                            <point x="1" y="0.5" />
+                            <point x="1" y="0.9375" />
+                            <point x="1" y="0.875" />
+                            <point x="0.0625" y="0.9375" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="S" pingpong="0" repeatcount="1" repeatto="0" sid="429673043980222" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Documents\S-Key.png">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="1" y="0.625" />
+                            <point x="1" y="0.1875" />
+                            <point x="1" y="0.5" />
+                            <point x="1" y="0.9375" />
+                            <point x="1" y="0.875" />
+                            <point x="0.0625" y="0.9375" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="D" pingpong="0" repeatcount="1" repeatto="0" sid="580497673327892" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yerik.koslowski\Documents\D-Key.png">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="1" y="0.625" />
+                            <point x="1" y="0.1875" />
+                            <point x="1" y="0.5" />
+                            <point x="1" y="0.9375" />
+                            <point x="1" y="0.875" />
+                            <point x="0.0625" y="0.9375" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="F" pingpong="0" repeatcount="1" repeatto="0" sid="393664656562629" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Yerik\Desktop\oentregador\F-Key.png">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="1" y="0.625" />
+                            <point x="1" y="0.1875" />
+                            <point x="1" y="0.5" />
+                            <point x="1" y="0.9375" />
+                            <point x="1" y="0.875" />
+                            <point x="0.0625" y="0.9375" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+		<object-type name="MJKeyShow" sid="609524760982146">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Track" sid="618179000398423" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="691267002444798" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.0625" y="0.0833333" />
+                            <point x="0.9375" y="0.0833333" />
+                            <point x="0.9375" y="0.9375" />
+                            <point x="0.0625" y="0.9375" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+		<object-type name="MJTilemap" sid="127285034171242">
+            <plugin id="Tilemap" />
+            <texture original-source="D:\Construct\MJTile.png" />
+            <tiles />
+        </object-type>
+		<object-type name="MJBoard" sid="770949687126105">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="406763525068412" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Construct\MJBoard.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+		<object-type name="MJShadow" sid="219560047802473">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="400036386010711" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+	</object-folder>
     <families />
     <layout-folder>
         <layout>Layout 1.xml</layout>
         <layout>TaxiBossMain.xml</layout>
+		<layout>MJ.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
@@ -528,6 +749,8 @@
         <event-sheet>TaxiBoss.xml</event-sheet>
         <event-sheet>TaxiBehaviour.xml</event-sheet>
         <event-sheet>TextBox.xml</event-sheet>
+		<event-sheet>MJ.xml</event-sheet>
+		<event-sheet>MJPlayer.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="1" />
@@ -552,7 +775,10 @@
         <file name="10convert.com_Final-Boss-Super-Mario-Bros-Super-Mario-Bros-3-Super-Mario-Maker-2-Music-Extended_0uuYbp3Zcws (online-audio-converter.com).ogg" />
         <file name="101118__darkozl__slowdown.ogg" />
     </sounds-folder>
-    <music-folder />
+    <music-folder>
+        <file name="MJ jogo ogg.ogg" />
+        <file name="Billie Jean Completo 1.ogg" />
+    </music-folder>
     <files-folder>
         <file-folder name="Icons">
             <file name="icon-16.png" />

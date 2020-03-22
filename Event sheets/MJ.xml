@@ -1,0 +1,908 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MJ</name>
+    <events>
+        <variable constant="0" name="isPlaying" sid="181145527373841" static="0" type="number">0</variable>
+        <variable constant="0" name="Music" sid="573529942996584" static="0" type="number">0</variable>
+        <include>MJPlayer</include>
+        <variable constant="0" name="Generate" sid="224925822398017" static="0" type="number">0</variable>
+        <variable constant="0" name="Regen" sid="530661782489652" static="0" type="number">0</variable>
+        <variable constant="0" name="PlayerLife" sid="914826179545098" static="0" type="number">5</variable>
+        <event-block sid="481428675167192">
+            <conditions>
+                <condition id="-33" name="Pick by comparison" sid="213854253217959" type="System">
+                    <param id="0" name="Object">MJCheckpoint</param>
+                    <param id="1" name="Expression">MJCheckpoint.Point</param>
+                    <param id="2" name="Comparison">0</param>
+                    <param id="3" name="Value">MJ.point</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="161616842796089" type="MJ">
+                    <param id="0" name="Instance variable">VectorX</param>
+                    <param id="1" name="Value">(MJCheckpoint.X - MJ.X)/abs(MJCheckpoint.X - MJ.X)</param>
+                </action>
+                <action id="-10" name="Set value" sid="426193622239427" type="MJ">
+                    <param id="0" name="Instance variable">VectorY</param>
+                    <param id="1" name="Value">(MJCheckpoint.Y - MJ.Y)/abs(MJCheckpoint.Y - MJ.Y)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="148164502521445">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="204511218354555" type="MJ">
+                            <param id="0" name="Instance variable">VectorX</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="250930534336096" type="MJ">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="614525656623277" type="MJ">
+                            <param id="0" name="Animation">&quot;Left&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="954309747175031">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="204141385523754" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="590342766879149" type="MJ">
+                            <param id="0" name="Instance variable">VectorX</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="598938305944386" type="MJ">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="806020791127531" type="MJ">
+                            <param id="0" name="Animation">&quot;Right&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="604137847998530">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="764930032036840" type="MJ">
+                            <param id="0" name="Instance variable">VectorY</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="173830592917706" type="MJ">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="204443745768413">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="314565097617823" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="448468382716305" type="MJ">
+                            <param id="0" name="Instance variable">VectorY</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="563890602498485" type="MJ">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="326871510798386">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="188426421085603" type="MJ">
+                    <param id="0" name="Object">MJCheckpoint</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="754629400108447" type="MJCheckpoint">
+                    <param id="0" name="Instance variable">Point</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">MJ.point</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="776591561150519" type="MJ">
+                    <param id="0" name="Instance variable">point</param>
+                    <param id="1" name="Value">MJCheckpoint.NextPoint</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="463472749016954">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="740684930193278" type="System">
+                    <param id="0" name="Interval (seconds)">round(random(1))/2+0.5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="853494614583010" type="System">
+                    <param id="0" name="Object to create">MJTeclas</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">854</param>
+                    <param id="3" name="Y">37</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="676167686756747" type="MJTeclas">
+                    <param id="0" name="Instance variable">Active</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="811804775831038">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="517614622606103" type="MJTeclas">
+                    <param id="0" name="Instance variable">Active</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="943096993330284" type="MJTeclas">
+                    <param id="0" name="Y">MJTeclas.Y + abs(MJTeclas.Speed)*dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="434590869589870">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="371774629407184" type="MJTeclas">
+                    <param id="0" name="Object">MJKeyShow</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="938674022106983" type="MJTeclas">
+                    <param id="0" name="Instance variable">ShouldBePressed</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="363608423051038">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="696172085377687" type="Keyboard">
+                    <param id="0" name="Key">70</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="398959413045822" type="System">
+                    <param id="0" name="Variable">isPlaying</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="860373030722192">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="717508606461186" type="MJTeclas">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;F&quot;</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="724970795811041" type="MJTeclas">
+                            <param id="0" name="Instance variable">ShouldBePressed</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="684140124017409" type="MJTeclas" />
+                        <action id="-10" name="Add to" sid="342019208461100" type="System">
+                            <param id="0" name="Variable">Regen</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="949065109658235">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="944121978920385" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="312294766099968" type="System">
+                            <param id="0" name="Variable">PlayerLife</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="409164344141023">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="180432201281615" type="Keyboard">
+                    <param id="0" name="Key">65</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="396788960004495" type="System">
+                    <param id="0" name="Variable">isPlaying</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="944734750904173">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="808699721233359" type="MJTeclas">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;A&quot;</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="867297435916797" type="MJTeclas">
+                            <param id="0" name="Instance variable">ShouldBePressed</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="883994860950809" type="MJTeclas" />
+                        <action id="-10" name="Add to" sid="270496711655934" type="System">
+                            <param id="0" name="Variable">Regen</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="667697881483715">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="912518333273242" type="System">
+                                    <param id="0" name="First value">MJTeclas.PickedCount</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="128320852180519" type="System">
+                                    <param id="0" name="Variable">PlayerLife</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="565575626807794">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="896298561091064" type="Keyboard">
+                    <param id="0" name="Key">83</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="445360706480122" type="System">
+                    <param id="0" name="Variable">isPlaying</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="157614107809622">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="911252453245964" type="MJTeclas">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;S&quot;</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="464297751778881" type="MJTeclas">
+                            <param id="0" name="Instance variable">ShouldBePressed</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="335428698985527" type="MJTeclas" />
+                        <action id="-10" name="Add to" sid="829126117116236" type="System">
+                            <param id="0" name="Variable">Regen</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="637027505433238">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="292337498876158" type="System">
+                                    <param id="0" name="First value">MJTeclas.PickedCount</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="256136995938017" type="System">
+                                    <param id="0" name="Variable">PlayerLife</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="305161282318973">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="436966962121029" type="Keyboard">
+                    <param id="0" name="Key">68</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="981661354209953" type="System">
+                    <param id="0" name="Variable">isPlaying</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="476028500086501">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="228081547770082" type="MJTeclas">
+                            <param id="0" name="Instance variable">ShouldBePressed</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="324595495198904" type="MJTeclas">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;D&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="833575961654847" type="MJTeclas" />
+                        <action id="-10" name="Add to" sid="327363816324602" type="System">
+                            <param id="0" name="Variable">Regen</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="522847337310580">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="553053009566860" type="System">
+                                    <param id="0" name="First value">MJTeclas.PickedCount</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="573234090418421" type="System">
+                                    <param id="0" name="Variable">PlayerLife</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="634978974412881">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="795713940316813" type="System">
+                    <param id="0" name="Variable">Regen</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="978335794629742">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="440796917997133" type="System">
+                            <param id="0" name="First value">Regen % 10</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="963695990109249" type="System">
+                            <param id="0" name="Variable">Regen</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="794531740853554" type="System">
+                            <param id="0" name="Variable">PlayerLife</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="484152162327342" type="System">
+                            <param id="0" name="Variable">PlayerLife</param>
+                            <param id="1" name="Value">clamp(PlayerLife,0,10)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="212113985335818">
+            <conditions>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="770585311860107" type="MJTeclas">
+                    <param id="0" name="Object">MJKeyShow</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="880753069073966" type="MJTeclas">
+                    <param id="0" name="Instance variable">ShouldBePressed</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="541364016819300" type="System">
+                    <param id="0" name="Variable">PlayerLife</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="828478533096977" type="MJTeclas">
+                    <param id="0" name="Instance variable">ShouldBePressed</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="686480856135833">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="432847059269425" type="System">
+                    <param id="0" name="Variable">PlayerLife</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="265470439358435" type="System" />
+                <action id="33" name="Stop all" sid="605999848694611" type="Audio" />
+                <action id="-9" name="Set value" sid="998529545965268" type="System">
+                    <param id="0" name="Variable">PlayerLife</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="-9" name="Set value" sid="335657931472839" type="System">
+                    <param id="0" name="Variable">Generate</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="301937088218809" type="System">
+                    <param id="0" name="Variable">isPlaying</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="848508842035419">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="502493101812226" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="121785368884787" type="MJTeclas">
+                    <param id="0" name="X">860</param>
+                    <param id="1" name="Y">490</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="253902821668560">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="725988562284807" type="System">
+                    <param id="0" name="Variable">isPlaying</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="485215155695514" type="System">
+                    <param id="0" name="Variable">isPlaying</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="298199039296223">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="909206125158000" type="System">
+                            <param id="0" name="Variable">Music</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="311859155645914" type="System">
+                            <param id="0" name="Variable">Generate</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="308266570866606" type="System">
+                            <param id="0" name="Seconds">4.09</param>
+                        </action>
+                        <action id="0" name="Play" sid="605553426787578" type="Audio">
+                            <param id="0" name="Audio file">MJ jogo ogg</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;Main&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="563147770008046">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="386653080828931" type="System">
+                            <param id="0" name="Variable">Music</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="501287521680645" type="System">
+                            <param id="0" name="Variable">Generate</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="596169276258242" type="System">
+                            <param id="0" name="Seconds">4.09</param>
+                        </action>
+                        <action id="0" name="Play" sid="573420675168225" type="Audio">
+                            <param id="0" name="Audio file">Billie Jean Completo 1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;Finale&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="454714792219213">
+            <conditions>
+                <condition id="0" name="On ended" sid="471369771829271" type="Audio">
+                    <param id="0" name="Tag">&quot;Main&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="681981312891478" type="System">
+                    <param id="0" name="Variable">Generate</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="645508223809112" type="System">
+                    <param id="0" name="Variable">Music</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="990216265178116" type="System">
+                    <param id="0" name="Variable">PlayerLife</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="-16" name="Wait" sid="837476678444129" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="963894900485509" type="System">
+                    <param id="0" name="Variable">isPlaying</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="872805992216301">
+            <conditions>
+                <condition id="0" name="On ended" sid="436865069361834" type="Audio">
+                    <param id="0" name="Tag">&quot;Finale&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="231552742817843" type="System">
+                    <param id="0" name="Variable">Generate</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="922900681638816" type="System">
+                    <param id="0" name="Variable">Music</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="937146548905354">
+            <conditions>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="650118437755053" type="MJTeclas">
+                    <param id="0" name="Instance variable">Active</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="825252342663909" type="System">
+                    <param id="0" name="Variable">Generate</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="749633730880954" type="MJTeclas">
+                    <param id="0" name="Instance variable">Music</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">Music</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="671996417417723" type="MJTeclas">
+                    <param id="0" name="Instance variable">MasterDelay</param>
+                    <param id="1" name="Value">dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="803841397513790">
+            <conditions>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="491195084080470" type="MJTeclas">
+                    <param id="0" name="Instance variable">Active</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="959679292235630" type="System">
+                    <param id="0" name="Variable">Generate</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="504773497560698" type="MJTeclas">
+                    <param id="0" name="Instance variable">MasterDelay</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="442295726658377" type="MJTeclas">
+                    <param id="0" name="Instance variable">Music</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">Music</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="546863858662968" type="MJTeclas">
+                    <param id="0" name="Instance variable">Delay</param>
+                    <param id="1" name="Value">dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <variable constant="0" name="LastTipo" sid="116395818952931" static="0" type="number">0</variable>
+        <event-block sid="238452831246489">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="508427368701715" type="MJTeclas">
+                    <param id="0" name="Instance variable">Delay</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="567258588656964" type="MJTeclas">
+                    <param id="0" name="Instance variable">MasterDelay</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="258950825094341" type="MJTeclas">
+                    <param id="0" name="Instance variable">Active</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="693906271235594" type="System">
+                    <param id="0" name="Variable">Generate</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="663139436154423" type="MJTeclas">
+                    <param id="0" name="Instance variable">Music</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">Music</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="860671914770270" type="MJTeclas">
+                    <param id="0" name="Instance variable">Active</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <variable constant="0" name="Tipo" sid="221526264734844" static="0" type="number">0</variable>
+                <event-block sid="455826319645735">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="358896432269301" type="System">
+                            <param id="0" name="Object">MJTeclas</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="620861733927398">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="789461639787972" type="MJTeclas">
+                                    <param id="0" name="Instance variable">PreDefined</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="313227603525090" type="System">
+                                    <param id="0" name="Variable">Tipo</param>
+                                    <param id="1" name="Value">round(random(3))</param>
+                                </action>
+                                <action disabled="1" id="-9" name="Set value" sid="948316831506510" type="System">
+                                    <param id="0" name="Variable">Tipo</param>
+                                    <param id="1" name="Value">round(random(1))</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="123437854795098">
+                                    <conditions>
+                                        <condition id="-23" name="While" sid="229645403052128" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="318536617589659" type="System">
+                                            <param id="0" name="Variable">Tipo</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">LastTipo</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="348479159016239" type="System">
+                                            <param id="0" name="Variable">Tipo</param>
+                                            <param id="1" name="Value">round(random(3))</param>
+                                        </action>
+                                        <action disabled="1" id="-9" name="Set value" sid="294592530711597" type="System">
+                                            <param id="0" name="Variable">Tipo</param>
+                                            <param id="1" name="Value">round(random(1))</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="233879131210400">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="705477102510932" type="System">
+                                            <param id="0" name="Variable">Tipo</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="440582010295754" type="MJTeclas">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Value">&quot;F&quot;</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="127698581228168" type="MJTeclas">
+                                            <param id="0" name="Animation">&quot;F&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="115014803010370" type="MJTeclas">
+                                            <param id="0" name="X">513</param>
+                                            <param id="1" name="Y">-16</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="892578497520295">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="433970754093892" type="System">
+                                            <param id="0" name="Variable">Tipo</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="810003362038961" type="MJTeclas">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Value">&quot;A&quot;</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="727296199494736" type="MJTeclas">
+                                            <param id="0" name="Animation">&quot;A&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action disabled="1" id="-3" name="Set position" sid="397173244376902" type="MJTeclas">
+                                            <param id="0" name="X">870</param>
+                                            <param id="1" name="Y">90</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="724716650596306" type="MJTeclas">
+                                            <param id="0" name="X">357</param>
+                                            <param id="1" name="Y">-16</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="749483234973478">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="237597388479969" type="System">
+                                            <param id="0" name="Variable">Tipo</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="177312822648990" type="MJTeclas">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Value">&quot;S&quot;</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="119119633569603" type="MJTeclas">
+                                            <param id="0" name="Animation">&quot;S&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action disabled="1" id="-3" name="Set position" sid="107175185475889" type="MJTeclas">
+                                            <param id="0" name="X">870</param>
+                                            <param id="1" name="Y">143</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="293772950873770" type="MJTeclas">
+                                            <param id="0" name="X">409</param>
+                                            <param id="1" name="Y">-16</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="742670821747805">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="909248663115530" type="System">
+                                            <param id="0" name="Variable">Tipo</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="522076465621432" type="MJTeclas">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Value">&quot;D&quot;</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="529909043221992" type="MJTeclas">
+                                            <param id="0" name="Animation">&quot;D&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action disabled="1" id="-3" name="Set position" sid="545425624191979" type="MJTeclas">
+                                            <param id="0" name="X">870</param>
+                                            <param id="1" name="Y">196</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="293456494974250" type="MJTeclas">
+                                            <param id="0" name="X">461</param>
+                                            <param id="1" name="Y">-16</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="389510830991464">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="125660753175145" type="System">
+                                            <param id="0" name="Variable">LastTipo</param>
+                                            <param id="1" name="Value">Tipo</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="785410584632551">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="491050533337022" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="847338726635776">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="357889930438941" type="MJTeclas">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;F&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="367011978211659" type="MJTeclas">
+                                            <param id="0" name="Animation">&quot;F&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="339051331887763" type="MJTeclas">
+                                            <param id="0" name="X">513</param>
+                                            <param id="1" name="Y">-16</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="150907338755815">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="269127675512416" type="MJTeclas">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;A&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="393694348394784" type="MJTeclas">
+                                            <param id="0" name="Animation">&quot;A&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action disabled="1" id="-3" name="Set position" sid="345843630360919" type="MJTeclas">
+                                            <param id="0" name="X">870</param>
+                                            <param id="1" name="Y">90</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="929450242902040" type="MJTeclas">
+                                            <param id="0" name="X">357</param>
+                                            <param id="1" name="Y">-16</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="307732422949720">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="705507638284530" type="MJTeclas">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;S&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="846448911148961" type="MJTeclas">
+                                            <param id="0" name="Animation">&quot;S&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action disabled="1" id="-3" name="Set position" sid="597952660625897" type="MJTeclas">
+                                            <param id="0" name="X">870</param>
+                                            <param id="1" name="Y">143</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="574967607050458" type="MJTeclas">
+                                            <param id="0" name="X">409</param>
+                                            <param id="1" name="Y">-16</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="468389910193041">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="844164842148999" type="MJTeclas">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;D&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="871500720249942" type="MJTeclas">
+                                            <param id="0" name="Animation">&quot;D&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action disabled="1" id="-3" name="Set position" sid="481130329996586" type="MJTeclas">
+                                            <param id="0" name="X">870</param>
+                                            <param id="1" name="Y">196</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="332872197455537" type="MJTeclas">
+                                            <param id="0" name="X">461</param>
+                                            <param id="1" name="Y">-16</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
