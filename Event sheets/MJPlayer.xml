@@ -19,7 +19,7 @@
         <event-block any="1" sid="238330026147418">
             <conditions>
                 <condition id="0" name="On key pressed" sid="960177771268906" type="Keyboard">
-                    <param id="0" name="Key">87</param>
+                    <param id="0" name="Key">70</param>
                 </condition>
                 <condition id="0" name="On key pressed" sid="612650962920487" type="Keyboard">
                     <param id="0" name="Key">38</param>

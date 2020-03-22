@@ -15,6 +15,7 @@
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
@@ -239,6 +240,9 @@
                 <instance-variable name="Speed" sid="850597807069635" type="number" />
                 <instance-variable name="ShouldBePressed" sid="109270650207452" type="boolean" />
                 <instance-variable name="Delay" sid="960704283358073" type="number" />
+                <instance-variable name="MasterDelay" sid="640516755846397" type="number" />
+                <instance-variable name="Music" sid="816056609691484" type="number" />
+                <instance-variable name="PreDefined" sid="474195840068906" type="boolean" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="DestroyOutsideLayout" sid="654679391572520">
@@ -291,6 +295,20 @@
                         </collision-poly>
                     </frame>
                 </animation>
+                <animation framecount="1" loop="0" name="F" pingpong="0" repeatcount="1" repeatto="0" sid="393664656562629" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Yerik\Desktop\oentregador\F-Key.png">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="1" y="0.625" />
+                            <point x="1" y="0.1875" />
+                            <point x="1" y="0.5" />
+                            <point x="1" y="0.9375" />
+                            <point x="1" y="0.875" />
+                            <point x="0.0625" y="0.9375" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
             </animation-folder>
         </object-type>
         <object-type name="KeyShow" sid="609524760982146">
@@ -316,6 +334,27 @@
         </object-type>
         <object-type name="Audio" sid="697230726546763">
             <plugin id="Audio" />
+        </object-type>
+        <object-type name="Tilemap" sid="127285034171242">
+            <plugin id="Tilemap" />
+            <texture original-source="D:\Construct\MJTile.png" />
+            <tiles />
+        </object-type>
+        <object-type name="MJBoard" sid="770949687126105">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="406763525068412" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Construct\MJBoard.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite" sid="219560047802473">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="400036386010711" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
@@ -352,6 +391,7 @@
     <music-folder>
         <file name="MichaelJackson.ogg" />
         <file name="MJ jogo ogg.ogg" />
+        <file name="Billie Jean Completo 1.ogg" />
     </music-folder>
     <files-folder>
         <file-folder name="Icons">
