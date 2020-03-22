@@ -39,6 +39,16 @@
                     <param id="0" name="Instance variable">Direction</param>
                     <param id="1" name="Value">random(100)</param>
                 </action>
+                <action id="25" name="Play at object" sid="845952675386656" type="Audio">
+                    <param id="0" name="Audio file">Carro2</param>
+                    <param id="1" name="Loop">0</param>
+                    <param id="2" name="Volume">-10</param>
+                    <param id="3" name="Object">Taxi</param>
+                    <param id="4" name="Inner angle">360</param>
+                    <param id="5" name="Outer angle">360</param>
+                    <param id="6" name="Outer gain">0</param>
+                    <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="666130470680053">
@@ -141,6 +151,19 @@
                     </sub-events>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="676321399964743">
+            <conditions>
+                <condition id="5" name="Is tag playing" sid="335119742787654" type="Audio">
+                    <param id="0" name="Tag">str(Taxi.UID)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set volume" sid="280962737287989" type="Audio">
+                    <param id="0" name="Tag">str(Taxi.UID)</param>
+                    <param id="1" name="dB">-10 * Audio.CurrentTime</param>
+                </action>
+            </actions>
         </event-block>
         <event-block sid="250486373808482">
             <conditions>
@@ -304,6 +327,26 @@
                             <param id="1" name="Value">1</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="702698001289800">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="468842313977770" type="ZuberTrigger">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Solid" id="0" name="Set enabled" sid="936832939973524" type="ZuberTrigger">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="425705757508567" type="ZuberTrigger">
+                                    <param id="0" name="Instance variable">Active</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-block>

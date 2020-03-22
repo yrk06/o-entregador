@@ -516,7 +516,7 @@
                 <instance-variable name="ID" sid="675279583283940" type="number" />
             </instance-variables>
         </object-type>
-		<object-type name="MJ" sid="714757679225220">
+        <object-type name="MJ" sid="714757679225220">
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="Speed" sid="717772548602425" type="number" />
@@ -606,7 +606,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-		<object-type name="MJCheckpoint" sid="383495180593762">
+        <object-type name="MJCheckpoint" sid="383495180593762">
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="NextPoint" sid="584205380367165" type="number" />
@@ -618,7 +618,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-		<object-type name="MJTeclas" sid="511797642968276">
+        <object-type name="MJTeclas" sid="511797642968276">
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="Type" sid="986840264532975" type="string" />
@@ -697,7 +697,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-		<object-type name="MJKeyShow" sid="609524760982146">
+        <object-type name="MJKeyShow" sid="609524760982146">
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="Track" sid="618179000398423" type="number" />
@@ -715,12 +715,12 @@
                 </animation>
             </animation-folder>
         </object-type>
-		<object-type name="MJTilemap" sid="127285034171242">
+        <object-type name="MJTilemap" sid="127285034171242">
             <plugin id="Tilemap" />
             <texture original-source="D:\Construct\MJTile.png" />
             <tiles />
         </object-type>
-		<object-type name="MJBoard" sid="770949687126105">
+        <object-type name="MJBoard" sid="770949687126105">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="406763525068412" speed="5">
@@ -728,7 +728,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-		<object-type name="MJShadow" sid="219560047802473">
+        <object-type name="MJShadow" sid="219560047802473">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="400036386010711" speed="5">
@@ -736,12 +736,12 @@
                 </animation>
             </animation-folder>
         </object-type>
-	</object-folder>
+    </object-folder>
     <families />
     <layout-folder>
         <layout>Layout 1.xml</layout>
         <layout>TaxiBossMain.xml</layout>
-		<layout>MJ.xml</layout>
+        <layout>MJ.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
@@ -749,13 +749,13 @@
         <event-sheet>TaxiBoss.xml</event-sheet>
         <event-sheet>TaxiBehaviour.xml</event-sheet>
         <event-sheet>TextBox.xml</event-sheet>
-		<event-sheet>MJ.xml</event-sheet>
-		<event-sheet>MJPlayer.xml</event-sheet>
+        <event-sheet>MJ.xml</event-sheet>
+        <event-sheet>MJPlayer.xml</event-sheet>
     </event-folder>
     <global-instances>
-        <global-instance type="Keyboard" uid="1" />
-        <global-instance type="Mouse" uid="2" />
-        <global-instance type="Audio" uid="7">
+        <global-instance type="Keyboard" uid="416" />
+        <global-instance type="Mouse" uid="417" />
+        <global-instance type="Audio" uid="418">
             <properties>
                 <timescale-audio>Off</timescale-audio>
                 <saveload>All</saveload>
@@ -774,6 +774,7 @@
         <file name="10convert.com_Final-Boss-Super-Mario-Bros-Super-Mario-Bros-3-Super-Mario-Maker-2-Music-Extended_0uuYbp3Zcws (online-audio-converter.com).m4a" />
         <file name="10convert.com_Final-Boss-Super-Mario-Bros-Super-Mario-Bros-3-Super-Mario-Maker-2-Music-Extended_0uuYbp3Zcws (online-audio-converter.com).ogg" />
         <file name="101118__darkozl__slowdown.ogg" />
+        <file name="Carro2.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="MJ jogo ogg.ogg" />
