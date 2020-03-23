@@ -11,8 +11,11 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="0">Layout 1</layout>
-        <layout active="1" order="1">TaxiBossMain</layout>
+        <layout order="1">TaxiBoss</layout>
+        <layout order="4">GameOver</layout>
         <event-sheet order="2">TaxiBoss</event-sheet>
+        <event-sheet order="3">Menu</event-sheet>
+        <event-sheet active="1" order="5">GameOver</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -43,5 +46,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/MJKeyShow/" />
         <folder expanded="1" path="animation-folder/MJBoard/" />
         <folder expanded="1" path="animation-folder/MJShadow/" />
+        <folder expanded="1" path="animation-folder/Mopcoes/" />
+        <folder expanded="1" path="animation-folder/Mtransicao/" />
+        <folder expanded="1" path="animation-folder/Mfundo/" />
+        <folder expanded="1" path="animation-folder/GOFundo/" />
+        <folder expanded="1" path="animation-folder/GOopcoes/" />
     </folders-expanded>
 </c2uistate>

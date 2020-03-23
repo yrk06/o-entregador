@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Menu</name>
+    <events>
+        <event-group description="" sid="543683207606832" title="menu" />
+        <event-block disabled="1" sid="234180929431833">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="292898403888760" type="Keyboard">
+                    <param id="0" name="Key">40</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="681346669525014" type="Mopcoes">
+                    <param id="0" name="Animation">&quot;menu1&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="462183398530335" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="185417013257947" type="Mopcoes">
+                    <param id="0" name="Animation">&quot;menu2&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="933248513604618">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="288173935479040" type="Keyboard">
+                    <param id="0" name="Key">40</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="560139768270807" type="Mopcoes">
+                    <param id="0" name="Animation">&quot;menu2&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="821421927558866" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="719709771620895" type="Mopcoes">
+                    <param id="0" name="Animation">&quot;menu1&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="780111704659947">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="724677804495419" type="Keyboard">
+                    <param id="0" name="Key">38</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="336460308247427" type="Mopcoes">
+                    <param id="0" name="Animation">&quot;menu1&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="828112530766694" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="433651565752123" type="Mopcoes">
+                    <param id="0" name="Animation">&quot;menu2&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="879672486600610">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="959021770821859" type="Keyboard">
+                    <param id="0" name="Key">38</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="155749392227401" type="Mopcoes">
+                    <param id="0" name="Animation">&quot;menu2&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="528543660451123" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="671681655479326" type="Mopcoes">
+                    <param id="0" name="Animation">&quot;menu1&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="141564990887215">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="499647707662693" type="Keyboard">
+                    <param id="0" name="Key">13</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="497687642077590" type="Mopcoes">
+                    <param id="0" name="Animation">&quot;menu1&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="812424043559410" type="System">
+                    <param id="0" name="Seconds">0.0</param>
+                </action>
+                <action id="0" name="Play" sid="978530569379450" type="Audio">
+                    <param id="0" name="Audio file">som_botão_pressionado</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" sid="143752343744030" type="System">
+                    <param id="0" name="Layout">&quot;TaxiBoss&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="118073299573730">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="963959433704801" type="Keyboard">
+                    <param id="0" name="Key">13</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="651553746941305" type="Mopcoes">
+                    <param id="0" name="Animation">&quot;menu2&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="204163840627388" type="System">
+                    <param id="0" name="Seconds">0.0</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" sid="796793024446404" type="System">
+                    <param id="0" name="Layout">&quot;TaxiBoss&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

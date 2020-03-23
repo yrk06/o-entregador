@@ -11,6 +11,7 @@
     <saved-with-version>27500</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
@@ -736,12 +737,71 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Mopcoes" sid="514337755637827">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="menu1" pingpong="0" repeatcount="1" repeatto="0" sid="566435011218737" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PICHAU\Desktop\JOGO\menu1 v2.png" />
+                </animation>
+                <animation framecount="1" loop="0" name="menu2" pingpong="0" repeatcount="1" repeatto="0" sid="859111499090198" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PICHAU\Desktop\JOGO\menu2 v2.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mtransicao" sid="736604052943147">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="383447826164307">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="257482375750022" speed="5">
+                    <frame duration="1" hotspotX="0.50057" hotspotY="0.5" original-source="C:\Users\PICHAU\Pictures\Jogo\tela preta.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mfundo" sid="518782711910412">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="297487061677566" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PICHAU\Desktop\JOGO\fundo menu.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="GOFundo" sid="101516751659257">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="745870212243752" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="GOmtext" sid="796770645453176">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="GOopcoes" sid="901840586653298">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="gameover1" pingpong="0" repeatcount="1" repeatto="0" sid="708911198993637" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PICHAU\Desktop\JOGO\menu gameover2.png" />
+                </animation>
+                <animation framecount="1" loop="0" name="gameover2" pingpong="0" repeatcount="1" repeatto="0" sid="344668473462318" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PICHAU\Desktop\JOGO\menu gameover1.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Browser" sid="666546897418162">
+            <plugin id="Browser" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Layout 1.xml</layout>
-        <layout>TaxiBossMain.xml</layout>
+        <layout>TaxiBoss.xml</layout>
         <layout>MJ.xml</layout>
+        <layout>Menu.xml</layout>
+        <layout>GameOver.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
@@ -751,11 +811,13 @@
         <event-sheet>TextBox.xml</event-sheet>
         <event-sheet>MJ.xml</event-sheet>
         <event-sheet>MJPlayer.xml</event-sheet>
+        <event-sheet>Menu.xml</event-sheet>
+        <event-sheet>GameOver.xml</event-sheet>
     </event-folder>
     <global-instances>
-        <global-instance type="Keyboard" uid="416" />
-        <global-instance type="Mouse" uid="417" />
-        <global-instance type="Audio" uid="418">
+        <global-instance type="Keyboard" uid="422" />
+        <global-instance type="Mouse" uid="423" />
+        <global-instance type="Audio" uid="424">
             <properties>
                 <timescale-audio>Off</timescale-audio>
                 <saveload>All</saveload>
@@ -769,6 +831,7 @@
                 <roll-off-factor>1</roll-off-factor>
             </properties>
         </global-instance>
+        <global-instance type="Browser" uid="40" />
     </global-instances>
     <sounds-folder>
         <file name="10convert.com_Final-Boss-Super-Mario-Bros-Super-Mario-Bros-3-Super-Mario-Maker-2-Music-Extended_0uuYbp3Zcws (online-audio-converter.com).m4a" />
@@ -779,6 +842,7 @@
     <music-folder>
         <file name="MJ jogo ogg.ogg" />
         <file name="Billie Jean Completo 1.ogg" />
+        <file name="som_botão_pressionado.ogg" />
     </music-folder>
     <files-folder>
         <file-folder name="Icons">

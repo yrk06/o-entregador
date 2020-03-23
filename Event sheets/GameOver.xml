@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>GameOver</name>
+    <events>
+        <variable constant="0" name="LayoutToGo" sid="131455267644659" static="0" type="text">TaxiBoss</variable>
+        <event-group description="" sid="326331790438060" title="menu" />
+        <event-block sid="871605364836363">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="342493868171263" type="Keyboard">
+                    <param id="0" name="Key">38</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="842840376984082" type="GOopcoes">
+                    <param id="0" name="Animation">&quot;gameover1&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="595302958967810" type="System">
+                    <param id="0" name="Seconds">0.0</param>
+                </action>
+                <action id="4" name="Set animation" sid="912380799936922" type="GOopcoes">
+                    <param id="0" name="Animation">&quot;gameover2&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="405001433260869">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="554012800673873" type="Keyboard">
+                    <param id="0" name="Key">40</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="261581534495024" type="GOopcoes">
+                    <param id="0" name="Animation">&quot;gameover1&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="312728386875678" type="System">
+                    <param id="0" name="Seconds">0.0</param>
+                </action>
+                <action id="4" name="Set animation" sid="114806646120316" type="GOopcoes">
+                    <param id="0" name="Animation">&quot;gameover2&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="682204667057704">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="576905074980039" type="Keyboard">
+                    <param id="0" name="Key">40</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="722554963902116" type="GOopcoes">
+                    <param id="0" name="Animation">&quot;gameover2&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="675855814473779" type="System">
+                    <param id="0" name="Seconds">0.0</param>
+                </action>
+                <action id="4" name="Set animation" sid="882115723691089" type="GOopcoes">
+                    <param id="0" name="Animation">&quot;gameover1&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="614709726501563">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="467966377600223" type="Keyboard">
+                    <param id="0" name="Key">38</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="760526958783705" type="GOopcoes">
+                    <param id="0" name="Animation">&quot;gameover2&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="599527035724363" type="System">
+                    <param id="0" name="Seconds">0.0</param>
+                </action>
+                <action id="4" name="Set animation" sid="514779041971824" type="GOopcoes">
+                    <param id="0" name="Animation">&quot;gameover1&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="402180000636404">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="298011293073181" type="Keyboard">
+                    <param id="0" name="Key">13</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="201439532918047" type="GOopcoes">
+                    <param id="0" name="Animation">&quot;gameover1&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="101502701093803" type="System">
+                    <param id="0" name="Seconds">0.0</param>
+                </action>
+                <action id="0" name="Play" sid="705693292682180" type="Audio">
+                    <param id="0" name="Audio file">som_botão_pressionado</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" sid="428095276881410" type="System">
+                    <param id="0" name="Layout">LayoutToGo</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="245505230662650">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="376875002266796" type="Keyboard">
+                    <param id="0" name="Key">13</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="379470443946806" type="GOopcoes">
+                    <param id="0" name="Animation">&quot;gameover2&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="371445960989064" type="System">
+                    <param id="0" name="Seconds">0.0</param>
+                </action>
+                <action id="0" name="Play" sid="424259321204292" type="Audio">
+                    <param id="0" name="Audio file">som_botão_pressionado</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="1" name="Close" sid="123623070731202" type="Browser" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
