@@ -41,6 +41,7 @@
     </window-size>
     <pixel-rounding>1</pixel-rounding>
     <preview-effects>1</preview-effects>
+    <first-layout>Menu</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -794,6 +795,14 @@
         <object-type name="Browser" sid="666546897418162">
             <plugin id="Browser" />
         </object-type>
+        <object-type name="YouWIn" sid="677656656069726">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="269595259539233" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Yerik\Downloads\753090-the-stanley-parable-windows-screenshot-you-win-as-if-it-were.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -802,6 +811,7 @@
         <layout>MJ.xml</layout>
         <layout>Menu.xml</layout>
         <layout>GameOver.xml</layout>
+        <layout>YouWin.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
@@ -813,6 +823,7 @@
         <event-sheet>MJPlayer.xml</event-sheet>
         <event-sheet>Menu.xml</event-sheet>
         <event-sheet>GameOver.xml</event-sheet>
+        <event-sheet>YouWIn.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="422" />
@@ -838,11 +849,16 @@
         <file name="10convert.com_Final-Boss-Super-Mario-Bros-Super-Mario-Bros-3-Super-Mario-Maker-2-Music-Extended_0uuYbp3Zcws (online-audio-converter.com).ogg" />
         <file name="101118__darkozl__slowdown.ogg" />
         <file name="Carro2.ogg" />
+        <file name="Laser_Shoot7.m4a" />
+        <file name="Laser_Shoot7.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="MJ jogo ogg.ogg" />
         <file name="Billie Jean Completo 1.ogg" />
         <file name="som_botão_pressionado.ogg" />
+        <file name="Billie Jean introC.ogg" />
+        <file name="Billie Jean synth menuC.ogg" />
+        <file name="musicadefundo.ogg" />
     </music-folder>
     <files-folder>
         <file-folder name="Icons">

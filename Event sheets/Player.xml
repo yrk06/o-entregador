@@ -94,6 +94,12 @@
                 <action id="-8" name="Set angle" sid="582272879424929" type="mentos">
                     <param id="0" name="Angle">angle(Player.X,Player.Y,Mouse.X,Mouse.Y)</param>
                 </action>
+                <action id="0" name="Play" sid="501707188270080" type="Audio">
+                    <param id="0" name="Audio file">Laser_Shoot7</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-20</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="496234379040970">

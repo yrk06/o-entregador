@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Inimigo</name>
+    <events>
+        <include>Player</include>
+        <event-block sid="321756351679372">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="586068953405005" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="490129490834852" type="System">
+                    <param id="0" name="Object to create">Inimigo</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">100</param>
+                    <param id="3" name="Y">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="940466592132266">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="448723819545709" type="Inimigo">
+                    <param id="0" name="Object">mentos</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="956752247742948" type="Inimigo" />
+            </actions>
+        </event-block>
+        <event-block sid="691111593359770">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="901927781538503" type="Inimigo">
+                    <param id="0" name="Object">Escapamento</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="800823264813890" type="Inimigo" />
+            </actions>
+        </event-block>
+        <event-block sid="349366976868019">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="814409328084614" type="System">
+                    <param id="0" name="Interval (seconds)">0.1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="292651485475771" type="Inimigo">
+                    <param id="0" name="X">Player.X</param>
+                    <param id="1" name="Y">Player.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="233504215615865">
+            <conditions>
+                <condition behavior="Pathfinding" id="0" name="On path found" sid="938653166920875" type="Inimigo" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="1" name="Move along path" sid="651068459732123" type="Inimigo" />
+            </actions>
+        </event-block>
+        <event-block sid="790632811766364">
+            <conditions>
+                <condition behavior="Pathfinding" id="1" name="On failed to find path" sid="720795408477989" type="Inimigo" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="272355122919221" type="Inimigo">
+                    <param id="0" name="X">Player.X</param>
+                    <param id="1" name="Y">Player.Y</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>GameOver</name>
     <events>
-        <variable constant="0" name="LayoutToGo" sid="131455267644659" static="0" type="text">TaxiBoss</variable>
+        <variable constant="0" name="LayoutToGo" sid="131455267644659" static="0" type="text"></variable>
         <event-group description="" sid="326331790438060" title="menu" />
         <event-block sid="871605364836363">
             <conditions>

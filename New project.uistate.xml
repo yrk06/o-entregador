@@ -13,9 +13,15 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout order="0">Layout 1</layout>
         <layout order="1">TaxiBoss</layout>
         <layout order="4">GameOver</layout>
+        <layout order="6">Menu</layout>
+        <layout order="9">MJ</layout>
+        <layout order="10">YouWin</layout>
         <event-sheet order="2">TaxiBoss</event-sheet>
-        <event-sheet order="3">Menu</event-sheet>
-        <event-sheet active="1" order="5">GameOver</event-sheet>
+        <event-sheet active="1" order="3">Menu</event-sheet>
+        <event-sheet order="5">GameOver</event-sheet>
+        <event-sheet order="7">Player</event-sheet>
+        <event-sheet order="8">MJ</event-sheet>
+        <event-sheet order="11">YouWIn</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -28,7 +34,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
-        <folder expanded="1" path="file-folder/" />
+        <folder expanded="0" path="file-folder/" />
         <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
         <folder expanded="1" path="file-folder/Icons/" />
@@ -51,5 +57,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Mfundo/" />
         <folder expanded="1" path="animation-folder/GOFundo/" />
         <folder expanded="1" path="animation-folder/GOopcoes/" />
+        <folder expanded="1" path="animation-folder/YouWIn/" />
     </folders-expanded>
 </c2uistate>

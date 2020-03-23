@@ -191,90 +191,14 @@
             </conditions>
             <actions>
                 <action id="33" name="Stop all" sid="710949988207082" type="Audio" />
-                <action id="-26" name="Restart layout" sid="327973118034431" type="System" />
+                <action id="-2" name="Go to layout" sid="327973118034431" type="System">
+                    <param id="0" name="Layout">GameOver</param>
+                </action>
+                <action id="-28" name="Set canvas size" sid="853869637120267" type="System">
+                    <param id="0" name="Width">854</param>
+                    <param id="1" name="Height">480</param>
+                </action>
             </actions>
-            <sub-events>
-                <event-block sid="710865614733891">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="367978610681214" type="System">
-                            <param id="0" name="Variable">Wave</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="930792419364501" type="System">
-                            <param id="0" name="Variable">Boss</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="722184024384304" type="System">
-                            <param id="0" name="Variable">BossLife</param>
-                            <param id="1" name="Value">40</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="168314643693977" type="System">
-                            <param id="0" name="Variable">CanSpawnBoss</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="450694570547571" type="System">
-                            <param id="0" name="Variable">SpawnTime</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="740714062222091" type="System">
-                            <param id="0" name="Variable">SpeedMax</param>
-                            <param id="1" name="Value">100</param>
-                        </action>
-                        <action id="-13" name="Set time scale" sid="622964658145866" type="System">
-                            <param id="0" name="Time scale">1</param>
-                        </action>
-                        <action id="0" name="Play" sid="957435022904406" type="Audio">
-                            <param id="0" name="Audio file">10convert.com_Final-Boss-Super-Mario-Bros-Super-Mario-Bros-3-Super-Mario-Maker-2-Music-Extended_0uuYbp3Zcws (online-audio-converter.com)</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">-10</param>
-                            <param id="1" name="Tag (optional)">&quot;BossMusic&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="219129043036212">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="305978947711255" type="System">
-                            <param id="0" name="Variable">Wave</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="659304486257320" type="System">
-                            <param id="0" name="Variable">Boss</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="900101120919117" type="System">
-                            <param id="0" name="Variable">BossLife</param>
-                            <param id="1" name="Value">40</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="530129535641164" type="System">
-                            <param id="0" name="Variable">CanSpawnBoss</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="846753005805141" type="System">
-                            <param id="0" name="Variable">SpawnTime</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="319960604742446" type="System">
-                            <param id="0" name="Variable">SpeedMax</param>
-                            <param id="1" name="Value">100</param>
-                        </action>
-                        <action id="-13" name="Set time scale" sid="847230820072611" type="System">
-                            <param id="0" name="Time scale">1</param>
-                        </action>
-                        <action id="0" name="Play" sid="186566409684310" type="Audio">
-                            <param id="0" name="Audio file">10convert.com_Final-Boss-Super-Mario-Bros-Super-Mario-Bros-3-Super-Mario-Maker-2-Music-Extended_0uuYbp3Zcws (online-audio-converter.com)</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">-10</param>
-                            <param id="1" name="Tag (optional)">&quot;BossMusic&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
         </event-block>
         <event-block sid="741882373942835">
             <conditions>
@@ -291,6 +215,10 @@
                 </action>
                 <action id="-16" name="Set opacity" sid="330871844682971" type="TaxiTutorial">
                     <param id="0" name="Opacity">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="428557172663305" type="System">
+                    <param id="0" name="Variable">LayoutToGo</param>
+                    <param id="1" name="Value">&quot;TaxiBoss&quot;</param>
                 </action>
             </actions>
             <sub-events>
@@ -328,6 +256,86 @@
                         </action>
                     </actions>
                     <sub-events>
+                        <event-block sid="710865614733891">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="367978610681214" type="System">
+                                    <param id="0" name="Variable">Wave</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="930792419364501" type="System">
+                                    <param id="0" name="Variable">Boss</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="722184024384304" type="System">
+                                    <param id="0" name="Variable">BossLife</param>
+                                    <param id="1" name="Value">40</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="168314643693977" type="System">
+                                    <param id="0" name="Variable">CanSpawnBoss</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="450694570547571" type="System">
+                                    <param id="0" name="Variable">SpawnTime</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="740714062222091" type="System">
+                                    <param id="0" name="Variable">SpeedMax</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                                <action id="-13" name="Set time scale" sid="622964658145866" type="System">
+                                    <param id="0" name="Time scale">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="957435022904406" type="Audio">
+                                    <param id="0" name="Audio file">10convert.com_Final-Boss-Super-Mario-Bros-Super-Mario-Bros-3-Super-Mario-Maker-2-Music-Extended_0uuYbp3Zcws (online-audio-converter.com)</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-10</param>
+                                    <param id="1" name="Tag (optional)">&quot;BossMusic&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="219129043036212">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="305978947711255" type="System">
+                                    <param id="0" name="Variable">Wave</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="659304486257320" type="System">
+                                    <param id="0" name="Variable">Boss</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="900101120919117" type="System">
+                                    <param id="0" name="Variable">BossLife</param>
+                                    <param id="1" name="Value">40</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="530129535641164" type="System">
+                                    <param id="0" name="Variable">CanSpawnBoss</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="846753005805141" type="System">
+                                    <param id="0" name="Variable">SpawnTime</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="319960604742446" type="System">
+                                    <param id="0" name="Variable">SpeedMax</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                                <action id="-13" name="Set time scale" sid="847230820072611" type="System">
+                                    <param id="0" name="Time scale">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="186566409684310" type="Audio">
+                                    <param id="0" name="Audio file">10convert.com_Final-Boss-Super-Mario-Bros-Super-Mario-Bros-3-Super-Mario-Maker-2-Music-Extended_0uuYbp3Zcws (online-audio-converter.com)</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-10</param>
+                                    <param id="1" name="Tag (optional)">&quot;BossMusic&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="702698001289800">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="468842313977770" type="ZuberTrigger">
@@ -347,6 +355,19 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="429704338261203">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="892412664414528" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="176103547026914" type="Audio">
+                            <param id="0" name="Audio file">Billie Jean Completo 1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;Ambient&quot;</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-block>
@@ -775,8 +796,8 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-25" name="Go to layout (by name)" sid="542615113847485" type="System">
-                    <param id="0" name="Layout">&quot;Layout 1&quot;</param>
+                <action id="-2" name="Go to layout" sid="542615113847485" type="System">
+                    <param id="0" name="Layout">MJ</param>
                 </action>
                 <action id="6" name="Stop" sid="264390061155180" type="Audio">
                     <param id="0" name="Tag">&quot;BossMusic&quot;</param>
@@ -837,6 +858,9 @@
                         <action id="-13" name="Set boolean" sid="345923038405057" type="ZuberTrigger">
                             <param id="0" name="Instance variable">Active</param>
                             <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="6" name="Stop" sid="835074375055638" type="Audio">
+                            <param id="0" name="Tag">&quot;Ambient&quot;</param>
                         </action>
                     </actions>
                 </event-block>
