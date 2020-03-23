@@ -796,8 +796,14 @@
                 </condition>
             </conditions>
             <actions>
+                <action behavior="8Direction" id="4" name="Set max speed" sid="252598193902379" type="Player">
+                    <param id="0" name="Max Speed">(1/1.5)* Player.8Direction.MaxSpeed</param>
+                </action>
+                <action id="-13" name="Set time scale" sid="589889389922840" type="System">
+                    <param id="0" name="Time scale">1.0</param>
+                </action>
                 <action id="-2" name="Go to layout" sid="542615113847485" type="System">
-                    <param id="0" name="Layout">MJ</param>
+                    <param id="0" name="Layout">mapa1</param>
                 </action>
                 <action id="6" name="Stop" sid="264390061155180" type="Audio">
                     <param id="0" name="Tag">&quot;BossMusic&quot;</param>

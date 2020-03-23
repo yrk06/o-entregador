@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>mapa1</name>
+    <events>
+        <include>Inimigo</include>
+        <include>Player</include>
+        <event-block sid="212753133452875">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="767325496501798" type="System" />
+            </conditions>
+            <actions>
+                <action id="-28" name="Set canvas size" sid="134934483400178" type="System">
+                    <param id="0" name="Width">640.5</param>
+                    <param id="1" name="Height">360</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="236254256654528">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="364373602856775" type="TaxiPortal">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-28" name="Set canvas size" sid="693179544588381" type="System">
+                    <param id="0" name="Width">854</param>
+                    <param id="1" name="Height">480</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="577782688592113" type="System">
+                    <param id="0" name="Layout">MJ</param>
+                </action>
+                <action id="33" name="Stop all" sid="871487833423951" type="Audio" />
+            </actions>
+        </event-block>
+        <event-block sid="651894903764618">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="189276967276076" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="933004038335150" type="Audio">
+                    <param id="0" name="Audio file">Billie Jean Completo 1</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;Ambient&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

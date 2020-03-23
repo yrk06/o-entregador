@@ -168,6 +168,7 @@
                     <instance-variables>
                         <isJumping>false</isJumping>
                         <shouldShake>false</shouldShake>
+                        <Life>20</Life>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">

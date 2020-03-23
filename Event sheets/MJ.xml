@@ -42,8 +42,11 @@
                             <param id="0" name="Control">1</param>
                         </action>
                         <action id="4" name="Set animation" sid="614525656623277" type="MJ">
-                            <param id="0" name="Animation">&quot;Left&quot;</param>
+                            <param id="0" name="Animation">&quot;Right&quot;</param>
                             <param id="1" name="From">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="267260079484194" type="MJ">
+                            <param id="0" name="State">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -63,6 +66,9 @@
                         <action id="4" name="Set animation" sid="806020791127531" type="MJ">
                             <param id="0" name="Animation">&quot;Right&quot;</param>
                             <param id="1" name="From">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="992072187921314" type="MJ">
+                            <param id="0" name="State">1</param>
                         </action>
                     </actions>
                 </event-block>

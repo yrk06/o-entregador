@@ -15,6 +15,10 @@
                     <param id="2" name="X">100</param>
                     <param id="3" name="Y">100</param>
                 </action>
+                <action id="-9" name="Set value" sid="101992112318529" type="System">
+                    <param id="0" name="Variable">LayoutToGo</param>
+                    <param id="1" name="Value">&quot;mapa1&quot;</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="940466592132266">
@@ -24,10 +28,28 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Destroy" sid="956752247742948" type="Inimigo" />
+                <action id="-12" name="Subtract from" sid="137958200213624" type="Inimigo">
+                    <param id="0" name="Instance variable">Life</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="640409480882262" type="mentos" />
             </actions>
+            <sub-events>
+                <event-block sid="144982818496313">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="441261581602792" type="Inimigo">
+                            <param id="0" name="Instance variable">Life</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="956752247742948" type="Inimigo" />
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
-        <event-block sid="691111593359770">
+        <event-block disabled="1" sid="691111593359770">
             <conditions>
                 <condition id="0" name="On collision with another object" sid="901927781538503" type="Inimigo">
                     <param id="0" name="Object">Escapamento</param>
@@ -43,12 +65,22 @@
                     <param id="0" name="Interval (seconds)">0.1</param>
                 </condition>
             </conditions>
-            <actions>
-                <action behavior="Pathfinding" id="0" name="Find path" sid="292651485475771" type="Inimigo">
-                    <param id="0" name="X">Player.X</param>
-                    <param id="1" name="Y">Player.Y</param>
-                </action>
-            </actions>
+            <actions />
+            <sub-events>
+                <event-block sid="676095097179702">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="711173913301735" type="Inimigo">
+                            <param id="0" name="Instance variable">Active</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="292651485475771" type="Inimigo">
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="233504215615865">
             <conditions>
@@ -68,6 +100,81 @@
                     <param id="1" name="Y">Player.Y</param>
                 </action>
             </actions>
+        </event-block>
+        <event-block sid="972875537782945">
+            <conditions>
+                <condition id="-11" name="For Each" sid="900232453197715" type="System">
+                    <param id="0" name="Object">Inimigo</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="210772814613227" type="Inimigo">
+                    <param id="0" name="Instance variable">Distance</param>
+                    <param id="1" name="Value">sqrt((Player.X - Inimigo.X )*(Player.X - Inimigo.X ) + (Player.Y-Inimigo.Y) * (Player.Y-Inimigo.Y))</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="211974241083477">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="562576989444482" type="Inimigo">
+                            <param id="0" name="Instance variable">Distance</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">500</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="286536399120308" type="Inimigo">
+                            <param id="0" name="Instance variable">Active</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="759002789815054">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="484114470970141" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="555810699846450" type="Inimigo">
+                            <param id="0" name="Instance variable">Active</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="476069691657220">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="507803298857843" type="Inimigo">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="992091954673817" type="Player">
+                    <param id="0" name="Instance variable">Life</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="650974755975891">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="288248052300013" type="Player">
+                            <param id="0" name="Instance variable">Life</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="834214831066181" type="System">
+                            <param id="0" name="Layout">GameOver</param>
+                        </action>
+                        <action id="-28" name="Set canvas size" sid="608546372937045" type="System">
+                            <param id="0" name="Width">854</param>
+                            <param id="1" name="Height">480</param>
+                        </action>
+                        <action id="33" name="Stop all" sid="271689784423541" type="Audio" />
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>
